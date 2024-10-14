@@ -1,6 +1,6 @@
 import React from "react";
 import SYContainer from "../../shared/SYContainer";
-import SubHeading from "../../shared/SubHeading";
+import Heading from "../../shared/Heading";
 import styles from "./OurApproach.module.scss";
 import SYButton from "../../shared/SYButton";
 
@@ -9,7 +9,7 @@ const OurApproach = () => {
     <div className={styles.ourApproachMain}>
       <SYContainer>
         <div className={styles.wrapper}>
-          <SubHeading label="Our Approach -BM@P" primary={true} />
+          <Heading className="pb-3" label="Our Approach -BM@P" primary={true} />
           <p className={styles.description}>
             Our BM@P (Brand Marketing at Play) framework combines creative
             strategies with AI marketing insights, ensuring your brand marketing

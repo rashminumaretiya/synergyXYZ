@@ -43,17 +43,17 @@ const Video = () => {
           >
             <CloseIcon />
           </SYButton>
-          <video
-            autoPlay
-            loop
-            width="100%"
-            height="100%"
-            className={styles.video}
-          >
-            <source src="../assets/videos/video.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
         </Modal.Header>
+        <video
+          autoPlay
+          loop
+          width="100%"
+          height="100%"
+          className={styles.video}
+        >
+          <source src="assets/videos/video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </Modal>
     </div>
   );

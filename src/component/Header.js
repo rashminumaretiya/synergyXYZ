@@ -22,12 +22,12 @@ const Header = () => {
           <Navbar expand="lg" className="p-0 align-items-center">
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
-              <Nav>
+              <Nav className="align-items-center">
                 {menuList?.map((menu, menuIndex) => (
                   <Nav.Link
                     href={menu.href}
                     key={menuIndex}
-                    className="p-0 py-1"
+                    className="p-0 pb-1 pt-2"
                   >
                     {menu?.label}
                     {menu.badge && (

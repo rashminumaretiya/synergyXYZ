@@ -2,6 +2,7 @@
 import React from "react";
 import HeroSection from "./home/HeroSection";
 import CTASection from "./home/CTASection";
+import CoreServices from "./home/CoreServices";
 import Video from "./home/Video";
 import GetnTouch from "./home/GetInTouch";
 import OurApproach from "./home/OurApproach";
@@ -13,6 +14,7 @@ const Home = () => {
       <HeroSection />
       <CTASection />
       <Video />
+      <CoreServices />
       <Challenges />
       <OurApproach />
       <GetnTouch />

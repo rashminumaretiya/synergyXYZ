@@ -1,11 +1,10 @@
 import React from "react";
 import { CurvyLine } from "./icon";
-// import { CurvyLine } from './icon'
 
-const SubHeading = ({ label, primary }) => {
+const Heading = ({ label, primary, className }) => {
   return (
     <div
-      className={`d-flex flex-column align-items-center sub-head ${
+      className={`${className} d-flex flex-column align-items-center sub-head ${
         primary ? "primary" : ""
       }`}
     >
@@ -15,4 +14,4 @@ const SubHeading = ({ label, primary }) => {
   );
 };
 
-export default SubHeading;
+export default Heading;

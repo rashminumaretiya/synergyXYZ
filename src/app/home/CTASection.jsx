@@ -8,9 +8,9 @@ import Image3 from "../../assets/image/png/why-choose-3.png";
 import Image4 from "../../assets/image/png/why-choose-4.png";
 import styles from "./CTASection.module.scss";
 import { CurvyLine } from "../../shared/icon";
-import SubHeading from "../../shared/SubHeading";
 import SYContainer from "../../shared/SYContainer";
 import SYButton from "../../shared/SYButton";
+import Heading from "../../shared/Heading";
 
 const whyChooseBox = [
   {
@@ -73,7 +73,7 @@ const CTASection = () => {
           </div>
         </div>
         <div>
-          <SubHeading
+          <Heading
             label={
               <>
                 Why Choose Synergy XYZ

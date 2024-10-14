@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import SYContainer from "../../shared/SYContainer";
-import SubHeading from "../../shared/SubHeading";
+import Heading from "../../shared/Heading";
 import styles from "./Challenges.module.scss";
 import { challangeBox } from "../../description/headerFooter.description";
 import Image from "next/image";
@@ -11,10 +11,7 @@ const Challenges = () => {
     <div className={styles.challengesMain}>
       <SYContainer>
         <div className={styles.wrapper}>
-          <SubHeading
-            label="Solving your Marketing Challenges"
-            primary={true}
-          />
+          <Heading label="Solving your Marketing Challenges" primary={true} />
           <div className={`row ${styles.challengesWrapper}`}>
             {challangeBox?.map((data, index) => {
               return (

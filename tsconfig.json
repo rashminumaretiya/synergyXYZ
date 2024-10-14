@@ -29,7 +29,7 @@
     "src/shared/icon.js",
     "src/shared/SYContainer.jsx",
     "src/shared/SYButton.jsx",
-    "src/shared/SubHeading.jsx",
+    "src/shared/Heading.jsx",
     "src/component/Header.js"
   ],
   "exclude": ["node_modules"]
