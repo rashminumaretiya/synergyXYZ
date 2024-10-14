@@ -1,3 +1,17 @@
+import Challenge2 from "../assets/image/png/chart3d.png";
+import Challenge3 from "../assets/image/png/human3d.png";
+import Challenge5 from "../assets/image/png/message3d.png";
+import Challenge6 from "../assets/image/png/setting3d.png";
+import Challenge4 from "../assets/image/png/smile3d.png";
+import Challenge1 from "../assets/image/png/user3d.png";
+import {
+  ClockIcon,
+  LocationIcon,
+  MailIcon,
+  PhoneIcon,
+  WhatsappIcon
+} from "../shared/icon";
+
 export const HeaderFooterData = {
   data: {
     id: 1,
@@ -127,3 +141,62 @@ export const HeaderFooterData = {
     ],
   },
 };
+
+export const footerList1 = [
+  {
+    icon: <PhoneIcon />,
+    label: "603 8080 1999",
+  },
+  {
+    icon: <WhatsappIcon />,
+    label: "6019 986 6950",
+  },
+  {
+    icon: <MailIcon />,
+    label: "contactus@synergyxyz.com",
+  },
+];
+
+export const footerList2 = [
+  {
+    icon: <LocationIcon />,
+    label: (
+      <>
+        <span>IOI Business Park</span> SS-02-10 Skypod Square, Persiaran Puchong
+        Jaya Selatan, Bandar Puchong Jaya,
+        <br className="d-none d-sm-block" /> 47100 Puchong, Selangor
+      </>
+    ),
+  },
+  {
+    icon: <ClockIcon />,
+    label: "Monday - Friday 	9 am–6 pm",
+  },
+];
+
+export const challangeBox = [
+  {
+    icon: Challenge1,
+    label: "Reaching the Right Audience",
+  },
+  {
+    icon: Challenge2,
+    label: "Effectiveness Measurement",
+  },
+  {
+    icon: Challenge3,
+    label: "Changing Consumer Behaviour",
+  },
+  {
+    icon: Challenge4,
+    label: "Customer Loyalty",
+  },
+  {
+    icon: Challenge5,
+    label: "Consistency in Brand Message",
+  },
+  {
+    icon: Challenge6,
+    label: "Maintaining Relevance",
+  },
+];

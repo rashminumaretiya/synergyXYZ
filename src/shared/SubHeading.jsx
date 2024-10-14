@@ -1,4 +1,5 @@
 import React from "react";
+import { CurvyLine } from "./icon";
 // import { CurvyLine } from './icon'
 
 const SubHeading = ({ label, primary }) => {
@@ -8,7 +9,7 @@ const SubHeading = ({ label, primary }) => {
         primary ? "primary" : ""
       }`}
     >
-      {/* <CurvyLine /> */}
+      <CurvyLine />
       <h2 className="fw-semibold">{label}</h2>
     </div>
   );

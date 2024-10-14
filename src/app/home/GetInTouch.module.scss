@@ -1,0 +1,30 @@
+.gitMain {
+  background-color: $primary;
+  border-radius: 20px;
+  padding: 60px 48px;
+  text-align: center;
+  color: $white;
+  position: relative;
+  .shape1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .shape2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  .gitContent {
+    margin-top: 32px;
+    h2 {
+      font-family: "raleway-semibold";
+    }
+    .description {
+      font-size: 20px;
+      line-height: 26px;
+      letter-spacing: 0.3px;
+      margin-top: 16px;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.challengesMain {
+  padding-bottom: 50px;
+  margin-top: 40px;
+  .challengesWrapper {
+    gap: 32px 0 !important;
+    & > div {
+      padding: 0 20px;
+    }
+  }
+  .challengeBox {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    color: $secondary100;
+  }
+}

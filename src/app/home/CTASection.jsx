@@ -73,9 +73,6 @@ const CTASection = () => {
           </div>
         </div>
         <div>
-          <div className="text-center">
-            <CurvyLine />
-          </div>
           <SubHeading
             label={
               <>
