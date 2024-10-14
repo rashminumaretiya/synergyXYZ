@@ -1,0 +1,71 @@
+.coreServiceMain {
+  background-color: $primary;
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      #2d3090 0%,
+      rgba(50, 15, 133, 0) 100%
+    );
+    height: 100%;
+    width: 100%;
+  }
+  .journeySwiper {
+    color: $white;
+    padding: 100px 0;
+
+    .slide {
+      transform: translateY(20px) !important;
+      transition: all 0.3s ease-in-out;
+      &.swiper-slide-active {
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
+.slideWrap {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  // margin-left: 50%;
+  .singleSlideWrapper {
+    &:nth-of-type(even) {
+      margin-top: 80px;
+    }
+  }
+  .slideWraper {
+    height: 300px;
+    width: 400px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-image: url("/assets/image/png/Rectangle.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: $white;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-64%, -50%);
+      height: 90%;
+      width: 73%;
+      background: radial-gradient(
+        50% 50% at 50% 50%,
+        #6264ff 0%,
+        rgba(50, 15, 133, 0) 100%
+      );
+      z-index: -1;
+    }
+  }
+}

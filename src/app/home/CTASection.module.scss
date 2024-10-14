@@ -1,0 +1,163 @@
+.CTASectionMain {
+  background-color: $primary;
+  position: relative;
+  color: $white;
+  padding-bottom: 350px;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    height: 100%;
+    width: 100%;
+    transform: translateX(-50%);
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      #2d3090 0%,
+      rgba(50, 15, 133, 0) 100%
+    );
+  }
+  .CTADesc {
+    h5 {
+      font-size: 28px;
+      font-weight: 300;
+    }
+  }
+  .boxMain {
+    background-color: $white;
+    border-radius: 20px;
+    padding: 60px 70px;
+    margin-top: 120px;
+    position: relative;
+    gap: 90px;
+    margin-bottom: 100px;
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 100px;
+      right: 0;
+      background-color: $primary;
+      filter: blur(114px);
+      bottom: 0;
+      z-index: -1;
+    }
+    @media screen and (max-width: 1399px) {
+      gap: 50px;
+      padding: 50px;
+      margin-top: 100px;
+    }
+    @media screen and (max-width: 1199px) {
+      gap: 20px;
+      padding: 40px 30px;
+    }
+    @media screen and (max-width: 767px) {
+      padding: 30px 40px;
+    }
+    @media screen and (max-width: 575px) {
+      padding: 20px;
+    }
+    .singleBox {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      max-width: 366px;
+      @media screen and (max-width: 991px) {
+        flex-direction: column;
+        max-width: 70%;
+        text-align: center;
+        margin: 0 auto;
+      }
+      @media screen and (max-width: 575px) {
+        max-width: 70%;
+      }
+      h2 {
+        color: $primary100;
+        font-size: 64px;
+        font-weight: bold;
+        line-height: 80px;
+        @media screen and (max-width: 1199px) {
+          font-size: 40px !important;
+          line-height: 54px !important;
+        }
+      }
+      p {
+        color: rgba($darkGray100, 0.7);
+        @media screen and (max-width: 1199px) {
+          font-size: 18px !important;
+          line-height: 1.25;
+        }
+      }
+    }
+  }
+  .whyChooseBox {
+    padding: 32px 36px;
+    position: relative;
+    background-color: rgba($white, 0.05);
+    height: 100%;
+    @media screen and (max-width: 1399px) {
+      padding: 25px 15px;
+    }
+    @media screen and (max-width: 991px) {
+      padding: 20px;
+    }
+    border-radius: 20px;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: calc(100% + 2px);
+      width: calc(100% + 2px);
+      border: 1px solid transparent;
+      background: linear-gradient(
+          90deg,
+          #0088ac -0.37%,
+          #0054a6 117.31%,
+          #662d91 234.99%
+        )
+        border-box;
+      mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      z-index: 0;
+      border-radius: 20px;
+      z-index: -1;
+    }
+    .imageWrapper {
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 230px;
+        width: 100%;
+        background: radial-gradient(
+          50% 50% at 50% 50%,
+          #6264ff 0%,
+          rgba(50, 15, 133, 0) 100%
+        );
+        z-index: -1;
+        opacity: 0.4;
+        @media screen and (max-width: 767px) {
+          height: 194px;
+        }
+      }
+      @media screen and (max-width: 767px) {
+        img {
+          max-width: 140px;
+          max-height: 140px;
+        }
+      }
+    }
+    h5 {
+      padding: 0 24px;
+      @media screen and (max-width: 991px) {
+        padding: 0;
+        font-size: 26px !important;
+        line-height: 32px !important;
+      }
+    }
+  }
+}

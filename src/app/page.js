@@ -1,5 +1,16 @@
-import styles from "./page.module.css";
+import React from "react";
+import HeroSection from "./home/HeroSection";
+import CTASection from "./home/CTASection";
+import Video from "./home/Video";
 
-export default function Home() {
-  return <div className={styles.page}>Home page </div>;
-}
+const Home = () => {
+  return (
+    <>
+      <HeroSection />
+      <CTASection />
+      <Video />
+    </>
+  );
+};
+
+export default Home;
