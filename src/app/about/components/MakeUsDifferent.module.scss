@@ -1,0 +1,25 @@
+.makeUsDifferentMain {
+  margin-bottom: 40px;
+  padding-bottom: 50px;
+  .wrapper {
+    padding: 0 120px;
+    .singleBox {
+      display: flex;
+      gap: 24px;
+      svg {
+        min-width: 64px;
+      }
+      .content {
+        h5 {
+          font-family: "raleway-medium";
+        }
+        p {
+          margin-top: 8px;
+          font-size: 20px;
+          line-height: 26px;
+          color: $lightGray100;
+        }
+      }
+    }
+  }
+}

@@ -1,17 +1,15 @@
 "use client";
-import React from "react";
-import BgShape from "../../assets/image/png/bg-shape.png";
 import Image from "next/image";
+import BgShape from "../../assets/image/png/bg-shape.png";
 import Image1 from "../../assets/image/png/why-choose-1.png";
 import Image2 from "../../assets/image/png/why-choose-2.png";
 import Image3 from "../../assets/image/png/why-choose-3.png";
 import Image4 from "../../assets/image/png/why-choose-4.png";
-import styles from "./CTASection.module.scss";
-import { CurvyLine } from "../../shared/icon";
-import SYContainer from "../../shared/SYContainer";
-import SYButton from "../../shared/SYButton";
 import Heading from "../../shared/Heading";
 import LineHead from "../../shared/LineHead";
+import SYButton from "../../shared/SYButton";
+import SYContainer from "../../shared/SYContainer";
+import styles from "./CTASection.module.scss";
 
 const whyChooseBox = [
   {

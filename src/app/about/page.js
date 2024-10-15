@@ -1,7 +1,6 @@
-import React from "react";
 import GetInTouch from "../../shared/GetInTouch";
+import AboutInfoSection from "./components/AboutInfoSection";
 import HeroSection from "./components/HeroSection";
-import HeartSection from "./components/HeartSection";
 
 const About = () => {
   const buttons = [
@@ -11,6 +10,7 @@ const About = () => {
   return (
     <>
       <HeroSection />
+      <AboutInfoSection />
       <GetInTouch
         heading="We're more than just a service provider – we're your partner in growth. "
         description={
@@ -26,7 +26,6 @@ const About = () => {
         }
         variant={buttons}
       />
-      <HeartSection />
     </>
   );
 };

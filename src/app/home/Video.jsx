@@ -8,13 +8,13 @@ import SYContainer from "../../shared/SYContainer";
 import SYButton from "../../shared/SYButton";
 import { CloseIcon, PlayIcon } from "../../shared/icon";
 
-const Video = () => {
+const Video = ({ className }) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
-    <div className={styles.videoMain}>
+    <div className={`${styles.videoMain} ${className ? className : ""}`}>
       <SYContainer>
         <div className={styles.videoPosterWrapper}>
           <Image

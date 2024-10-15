@@ -1,0 +1,25 @@
+.OurMissionMain {
+  padding-bottom: 32px;
+  .wrapper {
+    padding: 0 168px;
+  }
+  .card {
+    background-color: $white;
+    border-radius: 20px;
+    padding: 46px 48px;
+    margin-bottom: 32px;
+    text-align: center;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+    h2 {
+      color: $primary;
+      font-family: "raleway-semibold";
+    }
+    h5 {
+      color: $lightGray200;
+      font-family: "raleway-medium";
+      margin-top: 16px;
+    }
+  }
+}

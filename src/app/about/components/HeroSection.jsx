@@ -1,20 +1,19 @@
-"use client"
+"use client";
 import React from "react";
 import SYContainer from "../../../shared/SYContainer";
+import BannerSection from "../../../shared/BannerSection";
 import styles from "./HroSection.module.scss";
 import LineHead from "../../../shared/LineHead";
+import Img from "../../../assets/image/png/about-banner.png";
 
 const HeroSection = () => {
   return (
     <>
-      <div className={styles.heroMain}>
-        <SYContainer className="h-100">
-          <div className="d-flex flex-column h-100 justify-content-end">
-            <span>SYNERGY XYZ —</span>
-            <h2>Innovating the Future of Marketing</h2>
-          </div>
-        </SYContainer>
-      </div>
+      <BannerSection
+        image={Img.src}
+        subHead="SYNERGY XYZ —"
+        heading="Innovating the Future of Marketing"
+      />
       <SYContainer>
         <div className={styles.lineHeadMain}>
           <LineHead
