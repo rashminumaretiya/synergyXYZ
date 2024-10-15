@@ -72,9 +72,9 @@
         max-width: 70%;
       }
       h2 {
-        color: $primary100;
+        color: $primary;
         font-size: 64px;
-        font-weight: bold;
+        font-family: "raleway-semibold";
         line-height: 80px;
         @media screen and (max-width: 1199px) {
           font-size: 40px !important;

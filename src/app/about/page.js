@@ -1,7 +1,12 @@
-import React from "react";
+"use client";
+import HeartSection from "./HeartSection";
 
 const About = () => {
-  return <div>About</div>;
+  return (
+    <div>
+      <HeartSection />
+    </div>
+  );
 };
 
 export default About;

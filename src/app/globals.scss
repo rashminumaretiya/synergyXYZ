@@ -164,40 +164,44 @@ h5 {
 }
 
 // header style
-.header {
-  backdrop-filter: blur(20px);
-  box-shadow: 0px 2px 4px 0px #00000040;
-  border-radius: 0 0 20px 20px;
-  padding: 18px 0;
-  .navbar-nav {
-    gap: 30px;
-    .nav-link {
-      color: $darkGray;
-      position: relative;
-      font-weight: 100;
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        height: 1px;
-        width: 0;
-        background-color: $darkGray;
-        transition: all 0.3s ease-in-out;
-      }
-      .menu-badge {
-        background-color: $primary;
-        position: absolute;
-        top: -10px;
-        border-radius: 10px;
-        color: $white;
-        padding: 0 8px;
-        right: -10px;
-        font-size: 10px;
-      }
-      &:hover {
+header {
+  height: 74px;
+  .header {
+    backdrop-filter: blur(20px);
+    box-shadow: 0px 2px 4px 0px #00000040;
+    border-radius: 0 0 20px 20px;
+    background-color: rgba($white, 0.8);
+    padding: 18px 0;
+    .navbar-nav {
+      gap: 30px;
+      .nav-link {
+        color: $darkGray;
+        position: relative;
+        font-weight: 100;
         &::after {
-          width: 100%;
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 1px;
+          width: 0;
+          background-color: $darkGray;
+          transition: all 0.3s ease-in-out;
+        }
+        .menu-badge {
+          background-color: $primary;
+          position: absolute;
+          top: -10px;
+          border-radius: 10px;
+          color: $white;
+          padding: 0 8px;
+          right: -10px;
+          font-size: 10px;
+        }
+        &:hover {
+          &::after {
+            width: 100%;
+          }
         }
       }
     }
