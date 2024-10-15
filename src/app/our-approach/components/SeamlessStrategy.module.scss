@@ -1,0 +1,34 @@
+.leads {
+    color: $secondary;
+    font-size: 20px;
+}
+.seamlessStrategyWrapper {
+    background-color: $white;
+    border-radius: 20px;
+    padding: 20px;
+    position: relative;
+    margin-top: 50px;
+    &:before {
+        content: "";
+        background: linear-gradient(90deg, #0088AC -0.37%, #0054A6 117.31%, #662D91 234.99%);
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        margin: -1px;
+        border-radius: 20px;
+        z-index: -1;
+    }
+    .seamlessStrategyTable {
+        thead {
+            th {
+                background-color: $primary100;
+                color: #fff;
+                text-align: center;
+                font-size: 18px;
+                font-family: "raleway-semibold";
+            }
+        }
+    }
+}
