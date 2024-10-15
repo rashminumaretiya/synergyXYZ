@@ -5,6 +5,7 @@
   text-align: center;
   color: $white;
   position: relative;
+  margin-bottom: 40px;
   .shape1 {
     position: absolute;
     top: 0;
@@ -19,12 +20,18 @@
     margin-top: 32px;
     h2 {
       font-family: "raleway-semibold";
+      max-width: 1050px;
+      margin: 0 auto;
     }
-    .description {
+    p {
       font-size: 20px;
       line-height: 26px;
       letter-spacing: 0.3px;
-      margin-top: 16px;
+      margin-top: 24px;
+      font-family: "raleway-light";
+      &:first-of-type {
+        margin-top: 16px;
+      }
     }
   }
 }

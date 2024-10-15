@@ -11,6 +11,7 @@ import { CurvyLine } from "../../shared/icon";
 import SYContainer from "../../shared/SYContainer";
 import SYButton from "../../shared/SYButton";
 import Heading from "../../shared/Heading";
+import LineHead from "../../shared/LineHead";
 
 const whyChooseBox = [
   {
@@ -47,15 +48,11 @@ const CTASection = () => {
         height="auto"
       />
       <SYContainer className="position-relative z-2">
-        <div className={styles.CTADesc}>
-          <CurvyLine />
-          <h5 className="d-inline ms-3">
-            As an AI-powered marketing agency based in in Malaysia, we combine
-            creative innovation with the latest technology to help your brand
-            thrive. Our conventional and digital marketing services keep your
-            business ahead of the curve.
-          </h5>
-        </div>
+        <LineHead
+          white={true}
+          description="As an AI-powered marketing agency based in in Malaysia, we combine creative 
+innovation with the latest technology to help your brand thrive. Our conventional and digital marketing services keep your business ahead of the curve."
+        />
         <div
           className={`d-lg-flex align-items-center justify-content-between mx-3 ${styles.boxMain}`}
         >

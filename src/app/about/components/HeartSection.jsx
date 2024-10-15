@@ -1,12 +1,13 @@
+"use client";
 import { AnimatePresence, motion } from "framer-motion";
 import styles from "./HeartSection.module.scss";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import SynergyHeart from "../../assets/image/png/synergy-heart.png";
-import HeartRing from "../../assets/image/png/heart-ring.png";
-import HeartContentBox from "../../assets/image/png/heart-content-box.png";
-import Heading from "../../shared/Heading";
-import SYContainer from "../../shared/SYContainer";
+import SynergyHeart from "../../../assets/image/png/synergy-heart.png";
+import HeartRing from "../../../assets/image/png/heart-ring.png";
+import HeartContentBox from "../../../assets/image/png/heart-content-box.png";
+import Heading from "../../../shared/Heading";
+import SYContainer from "../../../shared/SYContainer";
 
 const HeartSection = () => {
   const items = [

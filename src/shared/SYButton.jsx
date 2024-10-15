@@ -1,6 +1,10 @@
 import React from "react";
 import { Button } from "react-bootstrap";
-import { ButtonArrowPrimary, ButtonArrowWhite } from "./icon";
+import {
+  ButtonArrowPrimary,
+  ButtonArrowSecondary,
+  ButtonArrowWhite,
+} from "./icon";
 
 const SYButton = ({ children, ...rest }) => {
   return (
@@ -9,6 +13,8 @@ const SYButton = ({ children, ...rest }) => {
       {!rest.hideArrow &&
         (rest.variant === "white" ? (
           <ButtonArrowWhite />
+        ) : rest.variant === "secondary" ? (
+          <ButtonArrowSecondary />
         ) : (
           <ButtonArrowPrimary />
         ))}

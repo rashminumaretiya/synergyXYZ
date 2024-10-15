@@ -1,11 +1,33 @@
-"use client";
-import HeartSection from "./HeartSection";
+import React from "react";
+import GetInTouch from "../../shared/GetInTouch";
+import HeroSection from "./components/HeroSection";
+import HeartSection from "./components/HeartSection";
 
 const About = () => {
+  const buttons = [
+    { name: "Get in Touch", variant: "white" },
+    { name: "Explore Our Services", variant: "secondary" },
+  ];
   return (
-    <div>
+    <>
+      <HeroSection />
+      <GetInTouch
+        heading="We're more than just a service provider – we're your partner in growth. "
+        description={
+          <>
+            <p>
+              We're excited to embark on this journey with you, leveraging our
+              expertise,
+              <br /> innovative approach, and cutting-edge technology to take
+              your brand to new heights.
+            </p>
+            <p>Let’s create something extraordinary together.</p>
+          </>
+        }
+        variant={buttons}
+      />
       <HeartSection />
-    </div>
+    </>
   );
 };
 

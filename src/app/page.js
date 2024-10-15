@@ -4,11 +4,12 @@ import HeroSection from "./home/HeroSection";
 import CTASection from "./home/CTASection";
 import CoreServices from "./home/CoreServices";
 import Video from "./home/Video";
-import GetnTouch from "./home/GetInTouch";
+import GetInTouch from "../shared/GetInTouch";
 import OurApproach from "./home/OurApproach";
 import Challenges from "./home/Challenges";
 
 const Home = () => {
+  const buttons = [{ name: "Get in Touch", variant: "white" }];
   return (
     <>
       <HeroSection />
@@ -17,7 +18,17 @@ const Home = () => {
       <CoreServices />
       <Challenges />
       <OurApproach />
-      <GetnTouch />
+      <GetInTouch
+        heading="Ready to Transform Your Brand?"
+        description={
+          <p>
+            Let’s collaborate to unlock your brand’s full potential.
+            <br /> Contact us today and see how we can tailor our AI business
+            solutions to your unique needs.
+          </p>
+        }
+        variant={buttons}
+      />
     </>
   );
 };

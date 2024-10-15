@@ -131,8 +131,9 @@ h5 {
   }
   span {
     display: block;
-    padding: 6px 20px;
+    padding: 8px 16px;
     border-radius: 30px;
+    line-height: 26px;
   }
   > svg {
     position: absolute;
@@ -153,12 +154,37 @@ h5 {
       background-color: $primary;
     }
   }
+  background-color: transparent;
+  &.btn-secondary {
+    span {
+      background-color: $secondary;
+      color: $white;
+    }
+  }
   &.btn-white {
     background-color: transparent;
     border: 0;
     span {
       background-color: $white;
       color: $primary;
+    }
+  }
+}
+
+// Line Head
+.lineHead {
+  h5 {
+    font-size: 28px;
+    font-weight: 300;
+    color: $secondary;
+    font-family: "raleway-medium";
+    span {
+      color: $primary;
+      font-family: "raleway-bold";
+      margin-right: 8px;
+    }
+    &.white {
+      color: $white;
     }
   }
 }
