@@ -2,29 +2,33 @@ import React from "react";
 import GetInTouch from "../../shared/GetInTouch";
 import HeroSection from "./components/HeroSection";
 import SeamlessStrategy from "./components/SeamlessStrategy";
-import BMAPJourney from "./components/BMAPJourney";
+import BMAPFrameworkJourney from "./components/BMAPFrameworkJourney";
 
 const OurApproach = () => {
   const buttons = [
-    { name: "Get in Touch", variant: "white" },
+    { name: "Schedule BM@P Consultation", variant: "white" },
     { name: "Explore Our Services", variant: "secondary" },
   ];
   return (
     <>
       <HeroSection />
       <SeamlessStrategy />
-      <BMAPJourney />
+      <BMAPFrameworkJourney />
       <GetInTouch
-        heading="We're more than just a service provider – we're your partner in growth. "
+        heading="Experience the SynergyXYZ Difference "
         description={
           <>
             <p>
-              We're excited to embark on this journey with you, leveraging our
-              expertise,
-              <br /> innovative approach, and cutting-edge technology to take
-              your brand to new heights.
+              Whether you’re an established enterprise or a rising start-up,
+              <br />
+              BM@P is built to elevate your brand, pushing boundaries and
+              unlocking new heights of success.
             </p>
-            <p>Let’s create something extraordinary together.</p>
+            <p>
+              With our diverse team of experts and AI-powered tools, <br />
+              we craft strategies that resonate and deliver real, measurable
+              growth.
+            </p>
           </>
         }
         variant={buttons}

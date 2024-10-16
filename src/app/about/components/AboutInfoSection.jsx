@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Video from "../../home/Video";
 import BgShape from "../../../assets/image/png/bg-shape.png";

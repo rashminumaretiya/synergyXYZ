@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import SYContainer from "../../../shared/SYContainer";
 import styles from "./OurMission.module.scss";

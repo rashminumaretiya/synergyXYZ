@@ -2,6 +2,11 @@
     color: $secondary;
     font-size: 20px;
 }
+.seamlessStrategy {
+    margin-bottom: -330px;
+    position: relative;
+    z-index: 99;
+}
 .seamlessStrategyWrapper {
     background-color: $white;
     border-radius: 20px;
@@ -20,15 +25,273 @@
         border-radius: 20px;
         z-index: -1;
     }
-    .seamlessStrategyTable {
-        thead {
-            th {
-                background-color: $primary100;
-                color: #fff;
-                text-align: center;
-                font-size: 18px;
-                font-family: "raleway-semibold";
+    .seamlessStrategyHead {
+        background-color: $primary100;
+        color: #fff;
+        text-align: center;
+        font-size: 18px;
+        font-family: "raleway-semibold";
+        border-radius: 10px;
+        padding: 10px;
+        border: 0;
+        border-left: 3px solid $lightGray300;
+        border-right: 3px solid $lightGray300;
+        img {
+            height: 65px;
+            width: auto;
+        }
+        h6 {
+            display: block;
+            margin-top: 5px;
+        }
+    }
+    :global(.swiper-backface-hidden .swiper-slide) {
+            transform: none;
+            -webkit-backface-visibility: visible;
+            backface-visibility: visible;
+            display: flex;
+            flex-direction: column;
+    }
+    :global(.swiper-slide) {
+        position: inherit;
+        height: auto;
+        &:first-child {
+            .mapContent {
+                .mapBox {
+                    &:first-child {
+                        h6 {
+                            margin-left: 120px;
+                        }
+                    }
+                    h6 {
+                        color: $secondary;
+                        &:before {
+                            background-color: $secondary;
+                            box-shadow: 0 0 0 4px rgba($secondary, 0.5);
+                        }
+                    }
+                }
+            }
+            .strategyWrapper {
+                .strategy {
+                    &:first-child {
+                        top: 170px;
+                    }
+                    &:nth-child(2) {
+                        bottom: 45px;
+                        right: -54px;
+                    }
+                }
             }
         }
+        &:nth-child(2) {
+            .mapContent {
+                .mapBox {
+                    &:first-child {
+                        margin-top: auto;
+                        padding-top: 32px;
+                    }
+                    &:last-child {
+                        margin-bottom: auto;
+                        padding-top: 40px;
+                    }
+                    h6 {
+                        color: $secondary100;
+                        &:before {
+                            background-color: $secondary100;
+                            box-shadow: 0 0 0 4px rgba($secondary100, 0.5);
+                        }
+                    }
+                }
+            }            
+            .strategyWrapper {
+                .strategy {
+                    &:first-child {
+                        top: 170px;
+                        right: 0;
+                        left: 0;
+                        margin: 0 auto;
+                    }
+                }
+            }
+        }
+        &:nth-child(3) {
+            .mapContent {
+                .mapBox {
+                    &:first-child {
+                        margin-top: 145px;
+                    }
+                    h6 {
+                        color: $purple;
+                        &:before {
+                            background-color: $purple;
+                            box-shadow: 0 0 0 4px rgba($purple, 0.5);
+                        }
+                    }
+                }
+            }   
+            .strategyWrapper {
+                .strategy {
+                    &:first-child {
+                        top: 170px;
+                        right: 0;
+                        left: 0;
+                        margin: 0 auto;
+                    }
+                    &:nth-child(2) {
+                        bottom: 240px;
+                        right: 0;
+                        left: 0;
+                        margin: 0 auto;
+                    }
+                    &:nth-child(3) {
+                        bottom: 100px;
+                        right: 0;
+                        left: 0;
+                        margin: 0 auto;
+                    }
+                }
+            }         
+        }
+        &:nth-child(4) {
+            .mapContent {
+                .mapBox {
+                    &:nth-child(2) {
+                        margin-top: auto;
+                        padding-top: 40px;
+                    }
+                    h6 {
+                        color: $primary;
+                        &:before {
+                            background-color: $primary;
+                            box-shadow: 0 0 0 4px rgba($primary, 0.5);
+                        }
+                    }
+                }
+            }  
+            .strategyWrapper {
+                .strategy {
+                    &:first-child {
+                        top: 240px;
+                        right: -50px;
+                    }
+                }
+            }                  
+        }
+        &:nth-child(5) {
+            .mapContent {
+                .mapBox {
+                    &:nth-child(2) {
+                        margin-top: auto;
+                        margin-bottom: auto;
+                        padding-top: 38px;
+                    }
+                    h6 {
+                        color: $secondary;
+                        &:before {
+                            background-color: $secondary;
+                            box-shadow: 0 0 0 4px rgba($secondary, 0.5);
+                        }
+                    }
+                }
+            }            
+        }
+        &:nth-child(2n) {
+            background-color: $lightGray300;
+        }
+        
+    }
+    .seamlessStrategyLine {
+        position: absolute;
+        right: 0;
+        left: 40px;
+        top: 180px;
+        width: 1160px;
+        pointer-events: none;
+        z-index: 8;
+    }
+    .title {
+        color: $primary;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 20px;
+        font-family: "raleway-semibold";
+    }
+    .mapContent {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        .mapBox {
+            height: 147px;
+            display: flex;
+            padding-top: 28px;
+            text-align: center;
+            justify-content: center;
+            position: relative;
+            z-index: 9;
+            h6 {
+                width: 92px;
+                position: relative;
+                font-size: 14px;
+                padding-top: 22px;
+                font-family: "raleway-semibold";
+                word-wrap: break-word;
+                &:before {
+                    content: "";
+                    width: 16px;
+                    height: 16px;
+                    border-radius: 100%;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    left: 0;
+                    margin: 0 auto;
+                }
+            }
+            &:nth-child(2) {
+                padding-top: 32px;
+            }
+            &:nth-child(3) {
+                padding-top: 40px;
+            }
+            &:last-child {
+                padding-top: 34px;
+            }
+        }
+    }
+    .strategyWrapper {
+        .strategy {
+            position: absolute;
+            text-align: center;
+            z-index: 9;
+            width: 104px;
+            h6 {
+                position: absolute;
+                color: $white;
+                top: 50%;
+                font-size: 14px;
+                font-family: "raleway-semibold";
+                transform: translateY(-50%);
+                left: 0;
+                right: 0;
+                padding: 0px 7px
+            }
+        }
+    }
+    :global(.custom-swiper-pagination) {
+        text-align: center;
+        margin-top: 10px;
+        :global(.swiper-pagination-bullet) {
+            background-color: rgba($black, 0.2);
+            &:global(.swiper-pagination-bullet-active) {
+                background-color: $secondary;
+            }
+        }
+    }
+}
+.seamlessStrategyBtn {
+    font-family: "raleway-semibold";
+    :global(.btn:not(:last-child)) {
+        margin-bottom: 10px;
     }
 }

@@ -11,29 +11,43 @@ import SYButton from "../../shared/SYButton";
 import SYContainer from "../../shared/SYContainer";
 import SYRow from "../../shared/SYRow";
 import SYCol from "../../shared/SYCol";
+import CardSection from "../../shared/CardSection";
 import styles from "./CTASection.module.scss";
 
 const whyChooseBox = [
   {
     src: Image1,
     label: "Fluid Strategies",
-    description: "Our adaptive BM@P framework evolves with your brand's needs",
+    description: [
+      {
+        textNormal:
+          "Our adaptive BM@P framework evolves with your brand's needs",
+      },
+    ],
   },
   {
     src: Image2,
     label: "Al-Enhanced Creativity",
-    description:
-      "Harness the power of artificial intelligence to supercharge your campaigns",
+    description: [
+      {
+        textNormal:
+          "Harness the power of artificial intelligence to supercharge your campaigns",
+      },
+    ],
   },
   {
     src: Image3,
     label: "Sustainable Growth",
-    description: "We focus on long-term success, not just quick wins",
+    description: [
+      { textNormal: "We focus on long-term success, not just quick wins" },
+    ],
   },
   {
     src: Image4,
     label: "Integrated Solutions",
-    description: "Seamless coordination across all marketing efforts",
+    description: [
+      { textNormal: "Seamless coordination across all marketing efforts" },
+    ],
   },
 ];
 
@@ -82,18 +96,11 @@ innovation with the latest technology to help your brand thrive. Our conventiona
           <SYRow className="row-gap-4">
             {whyChooseBox.map((data, index) => (
               <SYCol xs={12} md={6} xl={3} key={index}>
-                <div className={`${styles.whyChooseBox} text-center`}>
-                  <div className={styles.imageWrapper}>
-                    <Image
-                      height={180}
-                      width={180}
-                      src={data?.src}
-                      alt={`Image ${index + 1}`}
-                    />
-                  </div>
-                  <h5 className="mt-3">{data?.label}</h5>
-                  <p className="mt-3">{data?.description}</p>
-                </div>
+                <CardSection
+                  src={data?.src}
+                  label={data?.label}
+                  description={data?.description}
+                />
               </SYCol>
             ))}
           </SYRow>

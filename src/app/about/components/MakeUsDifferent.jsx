@@ -1,3 +1,4 @@
+"use client";
 import { makeDifferentBox } from "../../../description/aboutUs.description";
 import Heading from "../../../shared/Heading";
 import SYContainer from "../../../shared/SYContainer";

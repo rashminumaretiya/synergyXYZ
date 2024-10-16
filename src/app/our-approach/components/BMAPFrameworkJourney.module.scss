@@ -1,0 +1,21 @@
+.BMAPFrameworkJourneyWrapper {
+    background-color: $primary100;
+    position: relative;
+    padding: 0 0 100px 0;
+    z-index: 1;
+    &::after {
+        content: "";
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        height: 100%;
+        width: 100%;
+        transform: translateX(-50%);
+        background: radial-gradient(
+          50% 50% at 50% 50%,
+          #2d3090 0%,
+          rgba(50, 15, 133, 0) 100%
+        );
+        z-index: -3;
+      }
+}

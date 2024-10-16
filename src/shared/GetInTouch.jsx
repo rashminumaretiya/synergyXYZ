@@ -3,15 +3,18 @@ import SYContainer from "./SYContainer";
 import styles from "./GetInTouch.module.scss";
 import Image from "next/image";
 import Logo from "../assets/image/svg/white-logo.svg";
+import logoGradient from "../assets/image/svg/logo-gradient.svg";
 import Shape1 from "../assets/image/png/git-shape1.png";
 import Shape2 from "../assets/image/png/git-shape2.png";
 import SYButton from "./SYButton";
 
-const GetInTouch = ({ heading, description, variant }) => {
+const GetInTouch = ({ heading, description, variant, theme }) => {
   return (
-    <div>
+    <>
       <SYContainer>
-        <div className={styles.gitMain}>
+        <div
+          className={`${styles.gitMain} ${theme === "light" ? styles.gitMainLight : ""}`}
+        >
           <Image
             src={Shape1}
             alt="Bg shape 1"
@@ -28,7 +31,16 @@ const GetInTouch = ({ heading, description, variant }) => {
           />
           <div className="position-relative z-2">
             <div className="text-center">
-              <Image src={Logo} alt="logo icon" height={78} width={71} />
+              {theme === "light" ? (
+                <Image
+                  src={logoGradient}
+                  alt="logo icon"
+                  height={78}
+                  width={71}
+                />
+              ) : (
+                <Image src={Logo} alt="logo icon" height={78} width={71} />
+              )}
             </div>
             <div className={styles.gitContent}>
               <h2>{heading}</h2>
@@ -48,7 +60,7 @@ const GetInTouch = ({ heading, description, variant }) => {
           </div>
         </div>
       </SYContainer>
-    </div>
+    </>
   );
 };
 

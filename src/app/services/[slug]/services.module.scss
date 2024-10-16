@@ -1,0 +1,171 @@
+.serviceHead {
+    background-color: $primary100;
+    height: 700px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    h2 {
+        color: $white;
+        font-family: "raleway-semibold";
+        font-size: 64px;
+        line-height: 80px;
+    }
+    span {
+        color: $lightGray100;
+        text-transform: uppercase;
+    }
+    &:before {
+        content: "";
+        position: absolute;
+        background: radial-gradient(50% 50% at 50% 50%, #2D3090 0%, rgba(50, 15, 133, 0) 100%);
+        width: 622px;
+        height: 616px;
+        top: 0;
+        left: 16%;
+        z-index: -1;
+        opacity: 0.8;
+    }
+    .serviceShape1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .serviceShape2 {
+        position: absolute;
+        top: 0;
+        right: 10%;
+    }
+    .serviceBubble {
+        margin-bottom: -120px;
+        position: relative;
+        text-align: center;
+        &:before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            background-image: url('../../../assets/image/png/service-icon-shadow.png');
+            width: 600px;
+            height: 600px;
+            border-radius: 100%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+        .serviceBubbleIcon {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            transform: translateY(-50%);
+        }
+    }
+}
+.serviceContent {
+    margin-top: 20px;
+    .contentInner {
+        margin-bottom: 50px;
+        &:first-child {
+            > svg {
+                display: none;
+            }
+        }
+        h4 {
+            font-size: 32px;
+            color: $primary;
+            font-family: "raleway-semibold";
+            margin-bottom: 10px;
+            padding-top: 30px;
+        }
+        p {
+            color: $secondary;
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+            align-items: flex-start;
+            li {
+                width: 100%;
+                padding-left: 15px;
+                padding-right: 15px;
+                line-height: 28px;
+                padding-bottom: 20px;
+                h6 {
+                    display: flex;
+                    align-items: center;
+                    span {
+                        color: $primary;
+                        font-size: 22px;
+                        font-family: "raleway-semibold";
+                    }
+                    svg {
+                        margin-right: 10px;
+                        flex: none;
+                    }
+                }
+                ul {
+                    padding-left: 50px;
+                    margin-top: 15px;
+                    li {
+                        color: $secondary;
+                        font-size: 20px;
+                        position: relative;
+                        padding-bottom: 5px;
+                        &:before {
+                            content: "";
+                            position: absolute;
+                            left: 0;
+                            top: 12px;
+                            width: 5px;
+                            height: 5px;
+                            border-radius: 100%;
+                            background-color: $secondary;
+                        }
+                    }
+                }
+            }
+            &:global(.list-item4) {
+                li {
+                    width: 25%;
+                }
+            }
+            &:global(.list-item3) {
+                li {
+                    width: 33.33%;
+                }
+            }
+            &:global(.list-item2) {
+                li {
+                    width: 50%;
+                }
+            }
+        }
+    }
+}
+.serviceBottomSection {
+    background-color: $primary100;
+    position: relative;
+    padding: 0 0 300px 0;
+    margin-bottom: -300px;
+    z-index: 1;
+    &::after {
+        content: "";
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        height: 100%;
+        width: 100%;
+        transform: translateX(-50%);
+        background: radial-gradient(
+          50% 50% at 50% 50%,
+          #2d3090 0%,
+          rgba(50, 15, 133, 0) 100%
+        );
+        z-index: -3;
+      }
+}

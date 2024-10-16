@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import BannerSection from "../../../shared/BannerSection";
 import BGImage from "../../../assets/image/png/service-bg.png";

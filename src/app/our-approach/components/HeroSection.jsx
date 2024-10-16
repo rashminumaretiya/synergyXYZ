@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import SYContainer from "../../../shared/SYContainer";
 import styles from "./HroSection.module.scss";
@@ -10,8 +10,11 @@ const HeroSection = () => {
       <div className={styles.heroMain}>
         <SYContainer className="h-100">
           <div className="d-flex flex-column h-100 justify-content-end">
-            <span>SYNERGY XYZ —</span>
-            <h2>Innovating the Future of Marketing</h2>
+            <span>OUR APPROACH —</span>
+            <h2>
+              The BM@P Framework: <br />
+              Shaping the Future of Marketing, Today.
+            </h2>
           </div>
         </SYContainer>
       </div>
@@ -21,12 +24,11 @@ const HeroSection = () => {
             description={
               <>
                 <span>
-                  We're not just another marketing agency—we're your AI-powered
-                  creative partner.
+                  At SynergyXYZ, we’ve crafted BM@P (Brand Marketing at Play) as
+                  an adaptable creative marketing framework
                 </span>
-                We combine cutting-edge AI technology with human creativity to
-                deliver innovative strategies and measurable results for your
-                brand, keeping you ahead in the ever-evolving market landscape.
+                that evolves with your brand’s journey, connects you with your
+                audience and deliver results that matter.
               </>
             }
           />

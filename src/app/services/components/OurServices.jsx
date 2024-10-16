@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import BgShape from "../../../assets/image/png/bg-shape.png";
 import GredientBox from "../../../assets/image/png/gradient-box.png";

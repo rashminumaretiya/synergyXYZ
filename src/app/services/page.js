@@ -15,7 +15,7 @@ const Service = () => {
     },
   ];
   return (
-    <div>
+    <>
       <HeroSection />
       <OurSevices />
       <PoweredBy />
@@ -30,7 +30,7 @@ const Service = () => {
           </p>
         }
       />
-    </div>
+    </>
   );
 };
 

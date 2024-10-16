@@ -7,6 +7,13 @@
   position: relative;
   margin: 40px 0;
   overflow: hidden;
+  &.gitMainLight {
+    background-color: $white;
+    color: $primary;
+    .shape1, .shape2  {
+      opacity: 0.2;
+    }
+  }
   .shape1 {
     position: absolute;
     top: 0;

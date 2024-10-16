@@ -1,3 +1,4 @@
+"use client";
 import GetInTouch from "../../shared/GetInTouch";
 import AboutInfoSection from "./components/AboutInfoSection";
 import HeroSection from "./components/HeroSection";
