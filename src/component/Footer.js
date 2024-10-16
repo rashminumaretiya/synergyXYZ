@@ -1,32 +1,30 @@
 "use client";
-import React from "react";
-import SYContainer from "../shared/SYContainer";
 import Image from "next/image";
 import Logo from "../assets/image/svg/logo.svg";
-import {
-  footerList1,
-  footerList2,
-} from "../description/headerFooter.description";
+import { footerList1, footerList2 } from "../description/headerFooter.description";
 import { FacebookIcon, InstagramIcon, LinkedInIcon } from "../shared/icon";
+import SYCol from "../shared/SYCol";
+import SYContainer from "../shared/SYContainer";
+import SYRow from "../shared/SYRow";
 
 const Footer = () => {
   return (
     <footer>
       <SYContainer>
         <div className="footer-wrapper">
-          <div className="row">
-            <div className="col-md-4 col-xxl-6 footer-logo-main">
+          <SYRow>
+            <SYCol md={4} xxl={6} className=" footer-logo-main">
               <a href="#">
                 <Image src={Logo} alt="Logo" width={202} height={44} />
               </a>
               <p>© 2024 Synergy XYZ Sdn Bhd. All rights reserved.</p>
-            </div>
-            <div className="col-md-8 col-xxl-6">
-              <div className="row footer-list-main row-gap-2">
-                <div className="col-12">
+            </SYCol>
+            <SYCol md={8} xxl={6} >
+              <SYRow className="footer-list-main row-gap-2">
+                <SYCol xs={12}>
                   <h6>Contact Us</h6>
-                </div>
-                <div className="col-12 col-sm-6">
+                </SYCol>
+                <SYCol xs={12} sm={6}>
                   <ul>
                     {footerList1?.map((list, listIndex) => {
                       return (
@@ -37,8 +35,8 @@ const Footer = () => {
                       );
                     })}
                   </ul>
-                </div>
-                <div className="col-12 col-sm-6">
+                </SYCol>
+                <SYCol xs={12} sm={6}>
                   <ul className="footer-list2">
                     {footerList2?.map((list, listIndex) => {
                       return (
@@ -49,10 +47,10 @@ const Footer = () => {
                       );
                     })}
                   </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+                </SYCol>
+              </SYRow>
+            </SYCol>
+          </SYRow>
           <div className="lower-footer">
             <div className="social-icon-wrapper">
               <a href="#" className="social-icon">

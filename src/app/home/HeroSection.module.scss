@@ -1,32 +1,32 @@
 .bannerWrapper {
-    padding: 130px 0 50px 0;
-    position: relative;
-    .bannerImage {
-        display: table;
-        margin: 0 auto;
+  padding: 130px 0 50px 0;
+  position: relative;
+  .bannerImage {
+    display: table;
+    margin: 0 auto;
+  }
+  .bannerContent {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    h2 {
+      font-size: 64px;
+      font-family: "raleway-bold";
+      color: $primary;
+      margin-bottom: 32px;
+      span {
+        display: block;
+        color: $secondary;
+      }
     }
-    .bannerContent {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        text-align: center;
-        h2 {
-            font-size: 64px;
-            font-weight: 700;
-            color: $primary;
-            margin-bottom: 30px;
-            span {
-                display: block;
-                color: $secondary;
-            }
-        }
-        h5 {
-            font-size: 32px;
-            font-weight: 700;
-            color: $purple;
-            margin-top: 20px
-        }
+    h5 {
+      font-size: 32px;
+      font-family: "raleway-bold";
+      color: $purple;
+      margin-top: 16px;
     }
+  }
 }

@@ -5,6 +5,8 @@ import Heading from "../../shared/Heading";
 import styles from "./Challenges.module.scss";
 import { challangeBox } from "../../description/headerFooter.description";
 import Image from "next/image";
+import SYRow from "../../shared/SYRow";
+import SYCol from "../../shared/SYCol";
 
 const Challenges = () => {
   return (
@@ -12,10 +14,10 @@ const Challenges = () => {
       <SYContainer>
         <div className={styles.wrapper}>
           <Heading label="Solving your Marketing Challenges" primary={true} />
-          <div className={`row ${styles.challengesWrapper}`}>
+          <SYRow className={`${styles.challengesWrapper}`}>
             {challangeBox?.map((data, index) => {
               return (
-                <div key={index} className="col-12 col-sm-6 col-md-3 col-xl-4">
+                <SYCol xs={12} sm={6} md={3} xl={4} key={index}>
                   <div className={styles.challengeBox}>
                     <Image
                       src={data?.icon}
@@ -25,10 +27,10 @@ const Challenges = () => {
                     />
                     <h5>{data?.label}</h5>
                   </div>
-                </div>
+                </SYCol>
               );
             })}
-          </div>
+          </SYRow>
         </div>
       </SYContainer>
     </div>

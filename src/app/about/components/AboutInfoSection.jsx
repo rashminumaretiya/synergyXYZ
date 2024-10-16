@@ -17,10 +17,12 @@ const AboutInfoSection = () => {
         width="100%"
         height="auto"
       />
-      <Video className={styles.aboutVideoMain} />
-      <OurMission />
-      <MakeUsDifferent />
-      <HeartSection />
+      <div className={styles.wrapper}>
+        <Video className={styles.aboutVideoMain} />
+        <OurMission />
+        <MakeUsDifferent />
+        <HeartSection />
+      </div>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 .heroMain {
-  height: 700px;
+  height: 800px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
@@ -9,6 +9,7 @@
     font-family: "raleway-bold";
     color: $white;
     margin-bottom: 50px;
+    max-width: 1120px;
   }
   span {
     font-family: "raleway-bold";

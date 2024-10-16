@@ -1,0 +1,32 @@
+.inputBoxMain {
+  label {
+    font-size: 14px;
+    line-height: 16px;
+    font-family: "raleway-light";
+    color: $black;
+    margin-bottom: 4px;
+  }
+  input {
+    padding: 16px;
+    line-height: 19px;
+    border: 1px solid $lightGray100;
+    border-radius: 8px;
+    width: 100%;
+    &:focus-visible {
+      border-color: $primary100;
+      outline: 0;
+    }
+    &::placeholder {
+      color: $lightGray100;
+      font-family: "raleway-light";
+    }
+    &[type="number"] {
+      -moz-appearance: textfield; /* Firefox */
+    }
+    &[type="number"]::-webkit-inner-spin-button,
+    &[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+}

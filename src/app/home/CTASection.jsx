@@ -9,6 +9,8 @@ import Heading from "../../shared/Heading";
 import LineHead from "../../shared/LineHead";
 import SYButton from "../../shared/SYButton";
 import SYContainer from "../../shared/SYContainer";
+import SYRow from "../../shared/SYRow";
+import SYCol from "../../shared/SYCol";
 import styles from "./CTASection.module.scss";
 
 const whyChooseBox = [
@@ -77,9 +79,9 @@ innovation with the latest technology to help your brand thrive. Our conventiona
               </>
             }
           />
-          <div className="row row-gap-4">
+          <SYRow className="row-gap-4">
             {whyChooseBox.map((data, index) => (
-              <div className="col-12 col-md-6 col-xl-3" key={index}>
+              <SYCol xs={12} md={6} xl={3} key={index}>
                 <div className={`${styles.whyChooseBox} text-center`}>
                   <div className={styles.imageWrapper}>
                     <Image
@@ -92,9 +94,9 @@ innovation with the latest technology to help your brand thrive. Our conventiona
                   <h5 className="mt-3">{data?.label}</h5>
                   <p className="mt-3">{data?.description}</p>
                 </div>
-              </div>
+              </SYCol>
             ))}
-          </div>
+          </SYRow>
           <div className="text-center mt-5 pt-3">
             <SYButton variant="white">Find out more about us</SYButton>
           </div>

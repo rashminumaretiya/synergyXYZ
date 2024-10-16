@@ -1,0 +1,160 @@
+.ourServiceMain {
+  position: relative;
+  background-color: $primary100;
+  padding-bottom: 135px;
+  overflow: hidden;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    height: 100%;
+    width: 100%;
+    transform: translateX(-50%);
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      #2d3090 0%,
+      rgba(50, 15, 133, 0) 100%
+    );
+  }
+  .wrapper {
+    padding: 0 80px;
+    .serviceBoxCol {
+      padding: 0 20px;
+    }
+    .serviceBox {
+      padding: 32px;
+      border-radius: 20px;
+      position: relative;
+      height: 100%;
+      min-height: 272px;
+      overflow: hidden;
+      &:hover {
+        &::after {
+          display: none;
+        }
+        .content {
+          opacity: 0;
+          visibility: hidden;
+        }
+        .gredientImage,
+        .hoverContent {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        border: 1px solid transparent;
+        background: linear-gradient(
+            90deg,
+            #0088ac -0.37%,
+            #0054a6 117.31%,
+            #662d91 234.99%
+          )
+          border-box;
+        mask:
+          linear-gradient(#fff 0 0) padding-box,
+          linear-gradient(#fff 0 0);
+        mask-composite: exclude;
+        border-radius: 20px;
+      }
+      .gredientImage {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+      }
+      .content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        color: $white50;
+        padding: 32px;
+        transition: all 0.2s ease-in-out;
+        .headWrap {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          max-width: 285px;
+          span {
+            height: 16px;
+            min-width: 16px;
+            border-radius: 50%;
+          }
+        }
+        h4 {
+          font-family: "raleway-medium";
+        }
+        .seviceImage {
+          position: absolute;
+          bottom: 12px;
+          right: 12px;
+          &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 150%;
+            width: 150%;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(
+              50% 50% at 50% 50%,
+              #6264ff 0%,
+              rgba(50, 15, 133, 0) 100%
+            );
+            z-index: -1;
+            opacity: 0.4;
+          }
+        }
+      }
+      .hoverContent {
+        text-align: center;
+        max-width: 410px;
+        margin: 0 auto;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        h4 {
+          font-family: "raleway-bold";
+          color: $white50;
+        }
+        p {
+          margin: 16px auto 0;
+          color: $white100;
+          letter-spacing: 0.3px;
+        }
+        .btnOutline {
+          margin: 16px 0 0 0;
+          color: $white;
+          background-color: transparent;
+          border: 1px solid $white;
+          padding: 12px 24px;
+          padding: 0;
+          &:hover {
+            background-color: $white50;
+            color: $primary;
+          }
+        }
+      }
+    }
+  }
+}

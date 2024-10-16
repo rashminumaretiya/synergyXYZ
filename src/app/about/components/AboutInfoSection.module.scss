@@ -2,6 +2,25 @@
   background-color: $primary100;
   color: $white;
   margin-top: 190px;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    height: 100%;
+    width: 100%;
+    transform: translateX(-50%);
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      #2d3090 0%,
+      rgba(50, 15, 133, 0) 100%
+    );
+  }
+  .wrapper {
+    position: relative;
+    z-index: 2;
+  }
   .aboutVideoMain {
     position: relative;
     top: 0;

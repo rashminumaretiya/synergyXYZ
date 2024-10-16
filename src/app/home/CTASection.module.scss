@@ -1,12 +1,13 @@
 .CTASectionMain {
-  background-color: $primary;
+  background-color: $primary100;
   position: relative;
   color: $white;
   padding-bottom: 350px;
+  overflow: hidden;
   &::after {
     content: "";
     position: absolute;
-    top: 10%;
+    top: -10%;
     left: 50%;
     height: 100%;
     width: 100%;
@@ -29,7 +30,8 @@
       content: "";
       position: absolute;
       left: 0;
-      top: 100px;
+      height: 100%;
+      top: 60px;
       right: 0;
       background-color: $primary;
       filter: blur(114px);
@@ -111,7 +113,9 @@
           #662d91 234.99%
         )
         border-box;
-      mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+      mask:
+        linear-gradient(#fff 0 0) padding-box,
+        linear-gradient(#fff 0 0);
       mask-composite: exclude;
       z-index: 0;
       border-radius: 20px;

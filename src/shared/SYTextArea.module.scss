@@ -1,0 +1,14 @@
+.textAreaMain {
+  textarea {
+    width: 100%;
+    padding: 16px;
+    line-height: 19px;
+    border: 1px solid $lightGray100;
+    border-radius: 8px;
+    resize: none;
+    &:focus-visible {
+      border-color: $primary100;
+      outline: 0;
+    }
+  }
+}

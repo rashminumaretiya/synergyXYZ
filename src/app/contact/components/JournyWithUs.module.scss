@@ -1,0 +1,89 @@
+.journyWithUsMain {
+  background-color: $primary100;
+  position: relative;
+  z-index: 1;
+  color: $white;
+  padding-bottom: 500px;
+  margin-bottom: -420px;
+  overflow: hidden;
+  &::after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    height: 100%;
+    width: 100%;
+    transform: translateX(-50%);
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      #2d3090 0%,
+      rgba(50, 15, 133, 0) 100%
+    );
+  }
+  .descriptionText {
+    padding-bottom: 50px;
+    font-size: 20px;
+    line-height: 26px;
+    text-align: center;
+    color: $lightGray100;
+  }
+  .formWrapper {
+    padding: 0 170px;
+    background-color: $white;
+    border-radius: 20px;
+    padding: 60px 80px;
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      height: 100%;
+      top: 60px;
+      right: 0;
+      background-color: $primary;
+      filter: blur(114px);
+      bottom: 0;
+      z-index: -1;
+    }
+  }
+  .termConditionMain {
+    padding: 16px;
+    border-radius: 8px;
+    background-color: rgba($lightGray100, 0.2);
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    input[type="checkbox"] {
+      -webkit-appearance: none;
+      width: 16px;
+      height: 16px;
+      border: 1px solid #2e3092;
+      border-radius: 3px;
+      background-color: white;
+      position: relative;
+      cursor: pointer;
+    }
+    input[type="checkbox"]:checked::before {
+      content: "";
+      position: absolute;
+      width: 6px;
+      height: 9px;
+      border: solid #2e3092;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+      left: 50%;
+      top: 45%;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    label {
+      color: $black;
+      font-family: "raleway-light";
+      font-size: 12px;
+      line-height: 14px;
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+}
