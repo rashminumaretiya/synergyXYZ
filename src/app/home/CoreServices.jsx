@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useLayoutEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import Image from "next/image";
 import BgShape from "../../assets/image/png/bg-shape.png";
@@ -31,6 +31,7 @@ const CoreServices = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [halfScreenWidth, setHalfScreenWidth] = useState(window.innerWidth / 2);
   const [activeSlide, setActiveSlide] = useState(0); // State to track active slide
+  const [servicesWidth, setServicesWidth] = useState(0);
   const controls = useAnimation();
 
   const cards = [
@@ -129,6 +130,24 @@ const CoreServices = () => {
     },
   ];
 
+  useLayoutEffect(() => {
+    const calculateServicesWidth = () => {
+      const elements = document.querySelectorAll('[id^="coreService"]');
+      let totalWidth = window.innerWidth > 768 ? 200 : 0;
+      for (let i = 0; i < elements.length; i++) {
+        totalWidth += elements[i].clientWidth;
+      }
+      setServicesWidth(totalWidth);
+    };
+
+    calculateServicesWidth();
+    window.addEventListener("resize", calculateServicesWidth);
+
+    return () => {
+      window.removeEventListener("resize", calculateServicesWidth);
+    };
+  }, []);
+
   useEffect(() => {
     const handleWheel = (e) => {
       e.preventDefault();
@@ -136,7 +155,7 @@ const CoreServices = () => {
       setScrollPosition((prev) => {
         const newPosition = Math.max(
           0,
-          Math.min(prev + delta, (cards.length - 1) * 500)
+          Math.min(prev + delta, servicesWidth - halfScreenWidth / 2)
         );
         const newActiveSlide = Math.round(newPosition / 500);
         setActiveSlide(newActiveSlide);
@@ -154,7 +173,7 @@ const CoreServices = () => {
         container.removeEventListener("wheel", handleWheel);
       }
     };
-  }, [cards.length]);
+  }, [cards.length, servicesWidth, halfScreenWidth]);
 
   useEffect(() => {
     controls.start({ x: halfScreenWidth - scrollPosition });
@@ -237,6 +256,7 @@ const CoreServices = () => {
               return (
                 <motion.div
                   key={index}
+                  id={`coreService${index}`}
                   className={`${styles.slide} ${
                     activeSlide === index ? styles.active : ""
                   } ${

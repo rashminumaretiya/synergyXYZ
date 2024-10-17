@@ -1,7 +1,7 @@
 "use client";
 import { motion, useAnimation } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import ImageShadow from "../assets/image/png/image-shadow.png";
 import styles from "./CircleJourney.module.scss";
 import Heading from "./Heading";
@@ -12,7 +12,26 @@ const CircleJourney = ({ list, heading }) => {
   const [halfScreenWidth, setHalfScreenWidth] = useState(window.innerWidth / 2);
   const [activeSlide, setActiveSlide] = useState(0); // State to track active slide
   const [abc, setAbc] = useState([]); // State to track active slide
+  const [journeyStepsWidth, setJourneyStepsWidth] = useState(0);
   const controls = useAnimation();
+
+  useLayoutEffect(() => {
+    const calculateJourneyStepsWidthWidth = () => {
+      const elements = document.querySelectorAll('[id^="journeyStep"]');
+      let totalWidth = window.innerWidth > 768 ? 200 : 0;
+      for (let i = 0; i < elements.length; i++) {
+        totalWidth += elements[i].clientWidth;
+      }
+      setJourneyStepsWidth(totalWidth);
+    };
+
+    calculateJourneyStepsWidthWidth();
+    window.addEventListener("resize", calculateJourneyStepsWidthWidth);
+
+    return () => {
+      window.removeEventListener("resize", calculateJourneyStepsWidthWidth);
+    };
+  }, []);
 
   useEffect(() => {
     const handleWheel = (e) => {
@@ -21,7 +40,7 @@ const CircleJourney = ({ list, heading }) => {
       setScrollPosition((prev) => {
         const newPosition = Math.max(
           0,
-          Math.min(prev + delta, (list.length - 1) * 400)
+          Math.min(prev + delta, journeyStepsWidth - halfScreenWidth / 2)
         );
 
         return newPosition;
@@ -38,7 +57,7 @@ const CircleJourney = ({ list, heading }) => {
         container.removeEventListener("wheel", handleWheel);
       }
     };
-  }, [list?.length]);
+  }, [list.length, journeyStepsWidth, halfScreenWidth]);
 
   useEffect(() => {
     controls.start({ x: halfScreenWidth - scrollPosition });
@@ -82,6 +101,7 @@ const CircleJourney = ({ list, heading }) => {
             return (
               <motion.div
                 key={index}
+                id={`journeyStep${index}`}
                 className={`${styles.slide} ${
                   abc.includes(index) ? styles.active : ""
                 } ${abc.includes(index) && activeSlide !== index ? styles.activeSlide : ""}`}
