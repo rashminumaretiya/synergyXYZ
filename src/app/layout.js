@@ -3,7 +3,6 @@ import Header from "../component/Header";
 import Footer from "../component/Footer";
 // import SmoothScroll from "../shared/SmoothScroll";
 import "./globals.scss";
-import "./responsive.scss";
 
 export const metadata = {
   title: "Create Next App",

@@ -227,13 +227,6 @@ const CoreServices = () => {
   return (
     <>
       <div className={styles.serviceWrap}>
-        <Image
-          src={BgShape}
-          alt="Bg shape"
-          className="w-100 position-relative z-1"
-          width="100%"
-          height="auto"
-        />
         <SYContainer className="position-relative z-1">
           <SYRow className="justify-content-center">
             <SYCol md={8} className="text-center">

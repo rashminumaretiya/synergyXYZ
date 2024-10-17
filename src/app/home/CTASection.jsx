@@ -55,13 +55,6 @@ const whyChooseBox = [
 const CTASection = () => {
   return (
     <div className={styles.CTASectionMain}>
-      <Image
-        src={BgShape}
-        alt="Bg shape"
-        className="w-100 position-relative z-1"
-        width="100%"
-        height="auto"
-      />
       <SYContainer className="position-relative z-1">
         <LineHead
           white={true}

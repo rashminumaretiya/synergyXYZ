@@ -1,26 +1,30 @@
 "use client";
 import Image from "next/image";
 import Logo from "../assets/image/svg/logo.svg";
-import { footerList1, footerList2 } from "../description/headerFooter.description";
+import {
+  footerList1,
+  footerList2,
+} from "../description/headerFooter.description";
 import { FacebookIcon, InstagramIcon, LinkedInIcon } from "../shared/icon";
 import SYCol from "../shared/SYCol";
 import SYContainer from "../shared/SYContainer";
 import SYRow from "../shared/SYRow";
+import styles from "./Footer.module.scss";
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className={styles.footer}>
       <SYContainer>
-        <div className="footer-wrapper">
+        <div className={styles.footerWrapper}>
           <SYRow>
-            <SYCol md={4} xxl={6} className=" footer-logo-main">
+            <SYCol md={4} xxl={6} className={styles.footerLogoMain}>
               <a href="#">
                 <Image src={Logo} alt="Logo" width={202} height={44} />
               </a>
               <p>© 2024 Synergy XYZ Sdn Bhd. All rights reserved.</p>
             </SYCol>
-            <SYCol md={8} xxl={6} >
-              <SYRow className="footer-list-main row-gap-2">
+            <SYCol md={8} xxl={6}>
+              <SYRow className={`${styles.footerListMain} row-gap-2`}>
                 <SYCol xs={12}>
                   <h6>Contact Us</h6>
                 </SYCol>
@@ -37,7 +41,7 @@ const Footer = () => {
                   </ul>
                 </SYCol>
                 <SYCol xs={12} sm={6}>
-                  <ul className="footer-list2">
+                  <ul className={styles.footerList2}>
                     {footerList2?.map((list, listIndex) => {
                       return (
                         <li key={listIndex}>
@@ -51,19 +55,19 @@ const Footer = () => {
               </SYRow>
             </SYCol>
           </SYRow>
-          <div className="lower-footer">
-            <div className="social-icon-wrapper">
-              <a href="#" className="social-icon">
+          <div className={styles.lowerFooter}>
+            <div className={styles.socialIconWrapper}>
+              <a href="#" className={styles.socialIcon}>
                 <FacebookIcon />
               </a>
-              <a href="#" className="social-icon">
+              <a href="#" className={styles.socialIcon}>
                 <LinkedInIcon />
               </a>
-              <a href="#" className="social-icon">
+              <a href="#" className={styles.socialIcon}>
                 <InstagramIcon />
               </a>
             </div>
-            <div className="privacy-policy-wrapper">
+            <div className={styles.privacyPolicyWrapper}>
               <a href="#">Privacy Policy</a>
               <a href="#">Terms of Service</a>
             </div>

@@ -1,32 +1,73 @@
-// Footer Style
-footer {
+.footer {
   padding: 300px 0 54px;
   background-image: url(../assets/image/png/footer-bg.png);
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
   z-index: 9;
-  .footer-wrapper {
+  @media screen and (max-width: 767px) {
+    padding: 160px 0 54px;
+    background-position: right;
+  }
+  @media screen and (max-width: 575px) {
+    padding: 140px 0 54px;
+  }
+  .footerWrapper {
     padding: 32px;
     background-color: rgba($white, 0.8);
     border-radius: 16px;
+    @media screen and (max-width: 425px) {
+      padding: 32px 16px;
+    }
   }
-  .footer-logo-main {
+  .footerLogoMain {
+    @media screen and (max-width: 767px) {
+      margin-bottom: 65px;
+    }
+    @media screen and (max-width: 425px) {
+      margin-bottom: 40px;
+    }
     p {
       color: $darkGray200;
       margin-top: 8px;
       font-size: 14px;
+      @media screen and (max-width: 991px) {
+        font-size: 13px;
+      }
+      @media screen and (max-width: 767px) {
+        font-size: 14px;
+      }
+    }
+    img {
+      @media screen and (max-width: 991px) {
+        max-width: 153px;
+      }
+      @media screen and (max-width: 767px) {
+        max-width: 202px;
+      }
     }
   }
-  .footer-list-main {
+  .footerListMain {
+    @media screen and (max-width: 991px) {
+      font-size: 13px;
+    }
+    @media screen and (max-width: 575px) {
+      font-size: 16px;
+    }
+    @media screen and (max-width: 425px) {
+      font-size: 14px;
+    }
     h6 {
       font-family: "raleway-light";
       font-size: 15px;
       line-height: 24px;
     }
-    .footer-list2 {
+    .footerList2 {
       li {
         align-items: start;
+        @media screen and (max-width: 991px) {
+          gap: 8px;
+        }
         svg {
           margin-top: 3px;
         }
@@ -50,16 +91,19 @@ footer {
       }
     }
   }
-  .lower-footer {
+  .lowerFooter {
     margin-top: 45px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    .social-icon-wrapper {
+    .socialIconWrapper {
       display: flex;
       align-items: center;
       gap: 8px;
-      .social-icon {
+      @media screen and (max-width: 425px) {
+        gap: 5px;
+      }
+      .socialIcon {
         height: 24px;
         width: 24px;
         background-color: $darkGray300;
@@ -74,13 +118,16 @@ footer {
         }
       }
     }
-    .privacy-policy-wrapper {
+    .privacyPolicyWrapper {
       color: $lightGray;
       font-size: 12px;
       display: flex;
       align-items: center;
       gap: 20px;
       line-height: 17px;
+      @media screen and (max-width: 425px) {
+        gap: 8px;
+      }
       a:hover {
         text-decoration: underline;
       }

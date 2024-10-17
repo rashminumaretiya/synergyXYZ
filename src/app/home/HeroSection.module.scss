@@ -1,27 +1,37 @@
 .bannerWrapper {
   padding: 130px 0 50px 0;
   position: relative;
+  @media screen and (max-width: 767px) {
+    padding: 130px 0 0px 0;
+  }
+  @media screen and (max-width: 576px) {
+    padding: 120px 0 110px 0;
+  }
+  @media screen and (max-width: 425px) {
+    padding: 100px 0 110px 0;
+  }
   .bannerImage {
     display: table;
     margin: 0 auto;
     @media screen and (max-width: 575px) {
-      max-width: 275px;
+      max-width: 350px;
+      width: 100%;
       img {
         width: 100%;
         height: auto;
       }
+    }
+    @media screen and (max-width: 575px) {
+      max-width: 275px;
     }
   }
   .bannerContent {
     position: absolute;
     left: 0;
     right: 0;
-    top: 50%;
+    top: 60%;
     transform: translateY(-50%);
     text-align: center;
-    @media screen and (max-width: 767px) {
-      top: 60%;
-    }
     @media screen and (max-width: 575px) {
       top: 70%;
     }
@@ -31,14 +41,27 @@
       font-family: "raleway-bold";
       color: $primary;
       margin-bottom: 32px;
-      @media screen and (max-width: 991px) {
+      @media screen and (max-width: 1199px) {
+        font-size: 56px;
+        line-height: 70px;
       }
       @media screen and (max-width: 991px) {
-        font-size: 40px;
-        line-height: 54px;
+        font-size: 50px;
+        line-height: 70px;
+      }
+      @media screen and (max-width: 767px) {
+        font-size: 48px;
+        line-height: 60px;
       }
       @media screen and (max-width: 575px) {
         margin-bottom: 64px;
+        font-size: 40px;
+        line-height: 54px;
+      }
+      @media screen and (max-width: 425px) {
+        margin-bottom: 50px;
+        font-size: 36px;
+        line-height: 48px;
       }
       span {
         display: block;
@@ -50,9 +73,17 @@
       font-family: "raleway-bold";
       color: $purple;
       margin-top: 16px;
+      @media screen and (max-width: 991px) {
+        font-size: 28px;
+        line-height: 36px;
+      }
       @media screen and (max-width: 575px) {
         font-size: 26px;
         line-height: 32px;
+      }
+      @media screen and (max-width: 425px) {
+        font-size: 24px;
+        line-height: 30px;
       }
     }
   }

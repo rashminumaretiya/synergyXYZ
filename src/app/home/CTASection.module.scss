@@ -4,6 +4,17 @@
   color: $white;
   padding-bottom: 350px;
   overflow: hidden;
+  &::before {
+    content: "";
+    position: relative;
+    z-index: 1;
+    background-image: url(../../assets//image/png//bg-shape.png);
+    height: 220px;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right center;
+  }
   &::after {
     content: "";
     position: absolute;
