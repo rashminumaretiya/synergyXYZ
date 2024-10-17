@@ -3,6 +3,9 @@
   padding-bottom: 50px;
   .wrapper {
     padding: 0 120px;
+    @media screen and (max-width: 991px) {
+      padding: 0 80px;
+    }
     .singleBox {
       display: flex;
       gap: 24px;

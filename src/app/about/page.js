@@ -14,17 +14,14 @@ const About = () => {
       <AboutInfoSection />
       <GetInTouch
         heading="We're more than just a service provider – we're your partner in growth. "
-        description={
-          <>
-            <p>
-              We're excited to embark on this journey with you, leveraging our
-              expertise,
+        description={[
+          `We&apos;re excited to embark on this journey with you, leveraging
+              our expertise,
               <br /> innovative approach, and cutting-edge technology to take
-              your brand to new heights.
-            </p>
-            <p>Let’s create something extraordinary together.</p>
-          </>
-        }
+              your brand to new heights.`,
+
+          "Let’s create something extraordinary together.",
+        ]}
         variant={buttons}
       />
     </>

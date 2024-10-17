@@ -1,7 +1,7 @@
 "use client";
 import { AnimatePresence, motion } from "framer-motion";
 import styles from "./HeartSection.module.scss";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import SynergyHeart from "../../../assets/image/png/synergy-heart.png";
 import HeartRing from "../../../assets/image/png/heart-ring.png";
@@ -118,7 +118,7 @@ const HeartSection = () => {
       <SYContainer>
         <div className={styles.heartWrapper}>
           <div className={styles.heartRing}>
-            <Image src={HeartRing} alt="Heart Ring" />
+            <Image src={HeartRing} alt="Heart Ring" layout="responsive" />
           </div>
           <div className={styles.synergyHeart}>
             <Image src={SynergyHeart} alt="Heart Ring" />

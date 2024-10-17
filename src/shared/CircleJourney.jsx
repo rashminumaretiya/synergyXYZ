@@ -38,7 +38,7 @@ const CircleJourney = ({ list, heading }) => {
         container.removeEventListener("wheel", handleWheel);
       }
     };
-  }, [list.length]);
+  }, [list?.length]);
 
   useEffect(() => {
     controls.start({ x: halfScreenWidth - scrollPosition });
@@ -77,7 +77,7 @@ const CircleJourney = ({ list, heading }) => {
           className={styles.slideWrapper}
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
         >
-          {list.map((card, index) => {
+          {list?.map((card, index) => {
             cardNum = card.multiCardSection ? cardNum : cardNum + 1;
             return (
               <motion.div
@@ -104,6 +104,8 @@ const CircleJourney = ({ list, heading }) => {
                           className={styles.icon}
                           src={card.img}
                           alt={card.img}
+                          width={140}
+                          height={140}
                         />
                         <Image
                           className={styles.shadow}
@@ -122,7 +124,7 @@ const CircleJourney = ({ list, heading }) => {
         </motion.div>
       </div>
       <div className={styles.slideDots}>
-        {list.map((_, index) => {
+        {list?.map((_, index) => {
           return (
             <>
               <button

@@ -194,6 +194,9 @@ h5 {
     color: $white;
   }
 }
+.text-gray {
+  color: $lightGray200;
+}
 
 // Line Head
 .lineHead {
@@ -202,6 +205,15 @@ h5 {
     font-weight: 300;
     color: $secondary;
     font-family: "raleway-medium";
+    @media screen and (max-width: 991px) {
+      font-size: 26px;
+    }
+    @media screen and (max-width: 767px) {
+      font-size: 24px;
+    }
+    @media screen and (max-width: 575px) {
+      font-size: 22px;
+    }    
     span {
       color: $primary;
       font-family: "raleway-bold";
@@ -209,6 +221,11 @@ h5 {
     }
     &.white {
       color: $white;
+    }
+  }
+  svg {
+    @media screen and (max-width: 767px) {
+      max-width: 104px;
     }
   }
 }

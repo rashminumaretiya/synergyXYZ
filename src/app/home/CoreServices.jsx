@@ -243,8 +243,8 @@ const CoreServices = () => {
                     card?.multiCardSection?.length === 3
                       ? styles.multiCard3
                       : card?.multiCardSection?.length === 2
-                      ? styles.multiCard2
-                      : ""
+                        ? styles.multiCard2
+                        : ""
                   }`}
                   initial={{ y: calculateYTransform(index) }}
                   animate={{ y: calculateYTransform(index) }}

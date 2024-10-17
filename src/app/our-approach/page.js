@@ -16,21 +16,17 @@ const OurApproach = () => {
       <BMAPFrameworkJourney />
       <GetInTouch
         heading="Experience the SynergyXYZ Difference "
-        description={
-          <>
-            <p>
+        description={[
+          `
               Whether you’re an established enterprise or a rising start-up,
               <br />
               BM@P is built to elevate your brand, pushing boundaries and
-              unlocking new heights of success.
-            </p>
-            <p>
-              With our diverse team of experts and AI-powered tools, <br />
+              unlocking new heights of success.`,
+          `With our diverse team of experts and AI-powered tools, <br />
               we craft strategies that resonate and deliver real, measurable
               growth.
-            </p>
-          </>
-        }
+        `,
+        ]}
         variant={buttons}
       />
     </>
