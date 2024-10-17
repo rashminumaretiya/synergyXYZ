@@ -64,6 +64,7 @@
 
 body {
   font-family: "raleway-regular";
+  overflow-x: hidden;
 }
 ul {
   list-style: none;
@@ -186,7 +187,12 @@ h5 {
     }
   }
   &.btn-gradient {
-    background: linear-gradient(90deg, $secondary -0.37%, $secondary100 49.81%, $purple 100%);
+    background: linear-gradient(
+      90deg,
+      $secondary -0.37%,
+      $secondary100 49.81%,
+      $purple 100%
+    );
     color: $white;
   }
   &.btn-purple {
@@ -213,7 +219,7 @@ h5 {
     }
     @media screen and (max-width: 575px) {
       font-size: 22px;
-    }    
+    }
     span {
       color: $primary;
       font-family: "raleway-bold";
@@ -226,140 +232,6 @@ h5 {
   svg {
     @media screen and (max-width: 767px) {
       max-width: 104px;
-    }
-  }
-}
-
-// header style
-header {
-  .header {
-    backdrop-filter: blur(20px);
-    box-shadow: 0px 2px 4px 0px #00000040;
-    border-radius: 0 0 20px 20px;
-    background-color: rgba($white, 0.8);
-    padding: 18px 0;
-    .navbar-nav {
-      gap: 30px;
-      .nav-link {
-        color: $darkGray;
-        position: relative;
-        font-weight: 100;
-        &::after {
-          content: "";
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          height: 1px;
-          width: 0;
-          background-color: $darkGray;
-          transition: all 0.3s ease-in-out;
-        }
-        .menu-badge {
-          background-color: $primary;
-          position: absolute;
-          top: -10px;
-          border-radius: 10px;
-          color: $white;
-          padding: 0 8px;
-          right: -10px;
-          font-size: 10px;
-        }
-        &:hover {
-          &::after {
-            width: 100%;
-          }
-        }
-      }
-    }
-  }
-}
-
-// Footer Style
-footer {
-  padding: 300px 0 54px;
-  background-image: url(../assets/image/png/footer-bg.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: relative;
-  z-index: 9;
-  .footer-wrapper {
-    padding: 32px;
-    background-color: rgba($white, 0.8);
-    border-radius: 16px;
-  }
-  .footer-logo-main {
-    p {
-      color: $darkGray200;
-      margin-top: 8px;
-      font-size: 14px;
-    }
-  }
-  .footer-list-main {
-    h6 {
-      font-family: "raleway-light";
-      font-size: 15px;
-      line-height: 24px;
-    }
-    .footer-list2 {
-      li {
-        align-items: start;
-        svg {
-          margin-top: 3px;
-        }
-      }
-    }
-    li {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      line-height: 24px;
-      margin-bottom: 8px;
-      &:last-of-type {
-        margin: 0;
-      }
-      span {
-        font-family: "raleway-medium";
-        display: block;
-      }
-      svg {
-        min-width: 14px;
-      }
-    }
-  }
-  .lower-footer {
-    margin-top: 45px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .social-icon-wrapper {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      .social-icon {
-        height: 24px;
-        width: 24px;
-        background-color: $darkGray300;
-        color: $white;
-        border-radius: 50%;
-        transition: all 0.3s ease-in-out;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        &:hover {
-          background-color: $primary;
-        }
-      }
-    }
-    .privacy-policy-wrapper {
-      color: $lightGray;
-      font-size: 12px;
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      line-height: 17px;
-      a:hover {
-        text-decoration: underline;
-      }
     }
   }
 }

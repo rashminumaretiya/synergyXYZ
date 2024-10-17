@@ -215,7 +215,7 @@ const CoreServices = () => {
           width="100%"
           height="auto"
         />
-        <SYContainer className="position-relative z-2">
+        <SYContainer className="position-relative z-1">
           <SYRow className="justify-content-center">
             <SYCol md={8} className="text-center">
               <Heading label="Empowering your Journey﻿ at Every Step Through our Core Services" />

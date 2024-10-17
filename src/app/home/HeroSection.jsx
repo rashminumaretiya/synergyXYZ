@@ -17,7 +17,7 @@ const HeroSection = () => {
       <div className={styles.bannerContent}>
         <SYContainer>
           <SYRow className="justify-content-center">
-            <SYCol md={9}>
+            <SYCol xs={12}>
               <h2>
                 <span>Where AI Meets</span>
                 CREATIVITY & IMAGINATION

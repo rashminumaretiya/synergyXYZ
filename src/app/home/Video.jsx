@@ -7,6 +7,7 @@ import VideoPoster from "../../assets/image/png/video-banner.png";
 import SYContainer from "../../shared/SYContainer";
 import SYButton from "../../shared/SYButton";
 import { CloseIcon, PlayIcon } from "../../shared/icon";
+// import VideoSRC from "../../assets/videos/video.mp4";
 
 const Video = ({ className }) => {
   const [show, setShow] = useState(false);

@@ -4,6 +4,13 @@
   .bannerImage {
     display: table;
     margin: 0 auto;
+    @media screen and (max-width: 575px) {
+      max-width: 275px;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
   }
   .bannerContent {
     position: absolute;
@@ -12,11 +19,27 @@
     top: 50%;
     transform: translateY(-50%);
     text-align: center;
+    @media screen and (max-width: 767px) {
+      top: 60%;
+    }
+    @media screen and (max-width: 575px) {
+      top: 70%;
+    }
     h2 {
       font-size: 64px;
+      line-height: 80px;
       font-family: "raleway-bold";
       color: $primary;
       margin-bottom: 32px;
+      @media screen and (max-width: 991px) {
+      }
+      @media screen and (max-width: 991px) {
+        font-size: 40px;
+        line-height: 54px;
+      }
+      @media screen and (max-width: 575px) {
+        margin-bottom: 64px;
+      }
       span {
         display: block;
         color: $secondary;
@@ -27,6 +50,10 @@
       font-family: "raleway-bold";
       color: $purple;
       margin-top: 16px;
+      @media screen and (max-width: 575px) {
+        font-size: 26px;
+        line-height: 32px;
+      }
     }
   }
 }

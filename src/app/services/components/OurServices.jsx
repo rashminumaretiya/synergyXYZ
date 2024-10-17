@@ -19,7 +19,7 @@ const OurServices = () => {
         width="100%"
         height="auto"
       />
-      <SYContainer className="position-relative z-2">
+      <SYContainer className="position-relative z-1">
         <Heading label="Explore Our Services" />
         <div className={styles.wrapper}>
           <SYRow className="row-gap-4">

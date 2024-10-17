@@ -35,7 +35,7 @@ const GetInTouch = ({
             width={319}
             className={styles.shape2}
           />
-          <div className="position-relative z-2">
+          <div className="position-relative z-1">
             <div className="text-center">
               {theme === "light" ? (
                 <Image
