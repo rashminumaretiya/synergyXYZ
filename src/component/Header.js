@@ -150,13 +150,9 @@ const Header = () => {
                 </Navbar.Toggle>
                 <Nav className={`align-items-center ${styles.navbarNav}`}>
                   {menuList?.map((menu, menuIndex) => (
-                    <>
+                    <div key={menuIndex} className="position-relative w-100">
                       <div className={styles.navLinkWrapper}>
-                        <Nav.Link
-                          href={menu.href}
-                          className={styles.navLink}
-                          key={menuIndex}
-                        >
+                        <Nav.Link href={menu.href} className={styles.navLink}>
                           {menu?.label}
 
                           {menu.badge && (
@@ -203,7 +199,7 @@ const Header = () => {
                           </div>
                         </>
                       )}
-                    </>
+                    </div>
                   ))}
                   <div
                     className={`d-block d-lg-none w-100 ${styles.selectWrapper}`}
