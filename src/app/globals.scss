@@ -219,6 +219,7 @@ h5 {
     }
     @media screen and (max-width: 575px) {
       font-size: 22px;
+      line-height: 28px;
     }
     span {
       color: $primary;
@@ -233,5 +234,18 @@ h5 {
     @media screen and (max-width: 767px) {
       max-width: 104px;
     }
+  }
+}
+
+.small-curve-line{
+  @media screen and (max-width:991px) {
+    display: none;
+  }
+}
+
+.big-curve-line{
+  display: none;
+  @media screen and (max-width:991px) {
+    display: inline-block;
   }
 }

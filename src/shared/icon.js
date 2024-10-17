@@ -1541,3 +1541,35 @@ export const MenuIcon = () => {
     </svg>
   );
 };
+export const CurvyLineBig = () => {
+  return (
+    <svg
+      width="231"
+      height="13"
+      viewBox="0 0 231 13"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M230.5 4.26351C213.493 3.5564 20.3869 5.54013 1.5 3.54875C2.03778 3.15506 3.12142 2.58555 4.79136 2.06573C10.8929 0.101111 18.0821 1.02609 23.9936 3.42644C33.0671 7.01168 41.4653 14.0599 51.9095 11.4225C61.6016 8.9763 68.1197 -0.682444 79.4534 1.88227C86.9742 3.58315 92.4692 10.6772 100.176 11.2696C107.976 11.8697 114.34 5.65862 121.76 3.30795C126.547 1.79053 131.658 1.77142 136.624 2.34093C142.102 2.96778 147.545 3.80484 153.02 4.43168"
+        stroke="url(#paint0_linear_2203_13523)"
+        stroke-miterlimit="10"
+        stroke-linecap="round"
+      />
+      <defs>
+        <linearGradient
+          id="paint0_linear_2203_13523"
+          x1="0.646837"
+          y1="6.4995"
+          x2="539.623"
+          y2="6.4995"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#0088AC" />
+          <stop offset="0.5" stop-color="#0054A6" />
+          <stop offset="1" stop-color="#662D91" />
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+};

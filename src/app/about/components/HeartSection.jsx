@@ -111,8 +111,11 @@ const HeartSection = () => {
 
   return (
     <div className={styles.mainWrapper}>
-      <Heading className="pb-2" label="The Heart of SynergyXYZ" />
-      <p className="text-white">
+      <Heading
+        className={`pb-2 ${styles.heading}`}
+        label="The Heart of SynergyXYZ"
+      />
+      <p className={styles.descText}>
         Our core values that guide every aspect of our work
       </p>
       <SYContainer>

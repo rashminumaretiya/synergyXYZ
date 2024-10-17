@@ -6,6 +6,7 @@ import Logo from "../assets/image/svg/white-logo.svg";
 import logoGradient from "../assets/image/svg/logo-gradient.svg";
 import Shape1 from "../assets/image/png/git-shape1.png";
 import Shape2 from "../assets/image/png/git-shape2.png";
+import Shape3 from "../assets/image/png/git-shape3.png";
 import SYButton from "./SYButton";
 
 const GetInTouch = ({
@@ -35,7 +36,14 @@ const GetInTouch = ({
             width={319}
             className={styles.shape2}
           />
-          <div className="position-relative z-1">
+          <Image
+            src={Shape3}
+            alt="Bg shape 3"
+            height={213}
+            width={319}
+            className={styles.shape3}
+          />
+          <div className="position-relative z-2">
             <div className="text-center">
               {theme === "light" ? (
                 <Image
@@ -58,7 +66,7 @@ const GetInTouch = ({
                     dangerouslySetInnerHTML={{ __html: item }}
                   />
                 ))}
-              <div className="d-flex align-items-center gap-4 justify-content-center">
+              <div className="d-flex align-items-center gap-md-4 justify-content-center flex-md-row flex-column">
                 {variant?.map((data, index) => (
                   <SYButton
                     variant={data?.variant}

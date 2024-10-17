@@ -1,5 +1,5 @@
 import React from "react";
-import { CurvyLine } from "./icon";
+import { CurvyLine, CurvyLineBig } from "./icon";
 
 const Heading = ({ label, primary, className }) => {
   return (
@@ -8,7 +8,12 @@ const Heading = ({ label, primary, className }) => {
         primary ? "primary" : ""
       }`}
     >
-      <CurvyLine />
+      <span className="small-curve-line">
+        <CurvyLine />
+      </span>
+      <span className="big-curve-line">
+        <CurvyLineBig />
+      </span>
       <h2 className="fw-semibold">{label}</h2>
     </div>
   );

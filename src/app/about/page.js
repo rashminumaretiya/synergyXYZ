@@ -13,7 +13,7 @@ const About = () => {
       <HeroSection />
       <AboutInfoSection />
       <GetInTouch
-        heading="We're more than just a service provider – we're your partner in growth. "
+        heading="We're more than just a service provider – we're your partner in growth."
         description={[
           `We&apos;re excited to embark on this journey with you, leveraging
               our expertise,

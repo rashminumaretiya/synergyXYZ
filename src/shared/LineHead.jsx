@@ -6,7 +6,7 @@ const LineHead = ({ white, description }) => {
     <div className="lineHead">
       <CurvyLine />
       <h5
-        className={`d-inline ms-3 ${white ? "white" : ""}`}
+        className={`d-inline ${white ? "white" : ""}`}
         dangerouslySetInnerHTML={{ __html: description }}
       />
     </div>

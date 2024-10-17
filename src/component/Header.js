@@ -124,7 +124,7 @@ const Header = () => {
   const CustomDropdownIndicator = (props) => <GlobIcon />;
 
   return (
-    <header className="position-relative z-2">
+    <header className="position-relative">
       <div className={`${styles.header} ${styles.fixedTop}`}>
         <SYContainer>
           <div className="d-flex align-items-center justify-content-between">

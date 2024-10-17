@@ -7,13 +7,24 @@
     height: 700px;
   }
   @media screen and (max-width: 767px) {
-    height: 600px;
+    height: 622px;
   }
-  @media screen and (max-width: 575px) {
-    height: 500px;
+  &.overlay{
+    &::after{
+      content: '';
+      background: linear-gradient(270deg, rgba(34, 31, 115, 0) 0%, #0B0B3C 75.72%);
+      background-blend-mode: multiply;
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+    }
   }
-  @media screen and (max-width: 480px) {
-    height: 400px;
+  .heroHeadingWrapper{
+    @media screen and (max-width:767px) {
+      padding: 0 16px;
+    }
   }
   h2 {
     font-size: 64px;
@@ -33,6 +44,8 @@
     @media screen and (max-width: 575px) {
       font-size: 40px;
       line-height: 54px;
+      max-width: 80%;
+      margin-bottom: 40px;
     }
   }
   span {

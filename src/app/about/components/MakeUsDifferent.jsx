@@ -10,11 +10,14 @@ const MakeUsDifferent = () => {
     <div className={styles.makeUsDifferentMain}>
       <SYContainer>
         <div className={styles.wrapper}>
-          <Heading label="What Makes Us Different" />
-          <SYRow className="row-gap-5">
+          <Heading
+            className="make-us-heading"
+            label="What Makes Us Different"
+          />
+          <SYRow className="row-gap-md-5 row-gap-4">
             {makeDifferentBox?.map((data, index) => {
               return (
-                <SYCol xs={12} sm={6} key={index}>
+                <SYCol xs={12} md={6} key={index}>
                   <div className={styles.singleBox}>
                     {data?.icon}
                     <div className={styles.content}>

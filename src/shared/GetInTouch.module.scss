@@ -7,6 +7,10 @@
   position: relative;
   margin: 40px 0;
   overflow: hidden;
+  @media screen and (max-width:575px) {
+    margin: 20px 0;
+    padding: 80px 24px;
+  }
   &.gitMainLight {
     background-color: $white;
     color: $primary;
@@ -18,11 +22,28 @@
     position: absolute;
     top: 0;
     right: 0;
+    @media screen and (max-width:767px) {
+      top: 0%;
+      right: -150px;
+    }
   }
   .shape2 {
     position: absolute;
     bottom: 0;
     left: 0;
+    @media screen and (max-width:991px) {
+      display: none;
+    }
+  }
+  .shape3{
+    position: absolute;
+    bottom: -20px;
+    left: -9px;
+    max-width: 218px;
+    height: unset;
+    @media screen and (min-width:992px) {
+      display: none;
+    }
   }
   .gitContent {
     margin-top: 32px;
@@ -37,6 +58,10 @@
       letter-spacing: 0.3px;
       margin-top: 24px;
       font-family: "raleway-light";
+      @media screen and (max-width:767px){
+        font-size: 18px;
+        line-height: 24px;
+      }
       &:first-of-type {
         margin-top: 16px;
       }
