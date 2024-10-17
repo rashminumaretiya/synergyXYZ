@@ -1,8 +1,7 @@
 .OurMissionMain {
   padding-bottom: 32px;
-  .wrapper {
-    padding: 0 168px;
-  }
+  position: relative;
+  z-index: 99;
   .card {
     background-color: $white;
     border-radius: 20px;

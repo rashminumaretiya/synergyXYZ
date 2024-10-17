@@ -3,6 +3,24 @@
   color: $white;
   margin-top: 190px;
   position: relative;
+  @media screen  and (max-width: 991px) {
+    margin-top: 120px;
+  }
+  @media screen  and (max-width: 767px) {
+    margin-top: 80px;
+  }
+  @media screen  and (max-width: 575px) {
+    margin-top: 50px;
+  }
+  &:before {
+    content: "";
+    background-image: url('../../../assets/image/png/bg-shape.png');
+    height: 220px;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right center;
+  }
   &::after {
     content: "";
     position: absolute;
@@ -24,7 +42,14 @@
   .aboutVideoMain {
     position: relative;
     top: 0;
-    margin-top: -22%;
+    margin-top: -350px;
     margin-bottom: 93px;
+    @media screen  and (max-width: 991px) {
+      margin-top: -250px;
+      margin-bottom: 80px;
+    }
+    @media screen  and (max-width: 767px) {
+      margin-bottom: 50px;
+    }
   }
 }

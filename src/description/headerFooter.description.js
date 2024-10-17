@@ -9,7 +9,7 @@ import {
   LocationIcon,
   MailIcon,
   PhoneIcon,
-  WhatsappIcon,
+  WhatsappIcon
 } from "../shared/icon";
 
 export const HeaderFooterData = {

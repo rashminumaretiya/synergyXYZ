@@ -21,16 +21,14 @@ const HeroSection = () => {
       <SYContainer>
         <div className={styles.lineHeadMain}>
           <LineHead
-            description={
-              <>
+            description="
                 <span>
                   At SynergyXYZ, we’ve crafted BM@P (Brand Marketing at Play) as
                   an adaptable creative marketing framework
                 </span>
                 that evolves with your brand’s journey, connects you with your
                 audience and deliver results that matter.
-              </>
-            }
+              "
           />
         </div>
       </SYContainer>

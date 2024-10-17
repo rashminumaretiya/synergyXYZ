@@ -13,6 +13,7 @@ import SYRow from "../../shared/SYRow";
 import SYCol from "../../shared/SYCol";
 import CardSection from "../../shared/CardSection";
 import styles from "./CTASection.module.scss";
+import CountUp from "react-countup";
 
 const whyChooseBox = [
   {
@@ -61,7 +62,7 @@ const CTASection = () => {
         width="100%"
         height="auto"
       />
-      <SYContainer className="position-relative z-2">
+      <SYContainer className="position-relative z-1">
         <LineHead
           white={true}
           description="As an AI-powered marketing agency based in in Malaysia, we combine creative 
@@ -71,15 +72,23 @@ innovation with the latest technology to help your brand thrive. Our conventiona
           className={`d-lg-flex align-items-center justify-content-between mx-3 ${styles.boxMain}`}
         >
           <div className={styles.singleBox}>
-            <h2>22+</h2>
+            <h2>
+              <CountUp end={22} enableScrollSpy duration={4} />+
+            </h2>
             <p className="fs-5">Industries Reached in Malaysia</p>
           </div>
           <div className={styles.singleBox}>
-            <h2>140+</h2>
+            <h2>
+              {" "}
+              <CountUp end={140} enableScrollSpy duration={6} />+
+            </h2>
             <p className="fs-5">Companies Trusted us since Working with Us</p>
           </div>
           <div className={styles.singleBox}>
-            <h2>10</h2>
+            <h2>
+              {" "}
+              <CountUp end={10} enableScrollSpy duration={4} />
+            </h2>
             <p className="fs-5">Years of Marketing Experience</p>
           </div>
         </div>

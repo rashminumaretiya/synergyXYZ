@@ -17,18 +17,16 @@ const HeroSection = () => {
       <div className={styles.lineHeadMain}>
         <SYContainer>
           <LineHead
-            description={
-              <>
+            description="
                 <span>
                   At SynergyXYZ, we offer a full spectrum of marketing and
                   technology solutions
-                </span>{" "}
+                </span>
                 designed to elevate your brand, engage your audience, and drive
                 measurable results. Our AI-enhanced, data-driven approach
                 ensures that each service is tailored to your unique needs and
                 goals.
-              </>
-            }
+             "
           />
         </SYContainer>
       </div>

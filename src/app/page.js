@@ -20,13 +20,11 @@ const Home = () => {
       <OurApproach />
       <GetInTouch
         heading="Ready to Transform Your Brand?"
-        description={
-          <p>
-            Let’s collaborate to unlock your brand’s full potential.
+        description={[
+          `Let’s collaborate to unlock your brand’s full potential.
             <br /> Contact us today and see how we can tailor our AI business
-            solutions to your unique needs.
-          </p>
-        }
+            solutions to your unique needs.`,
+        ]}
         variant={buttons}
       />
     </>

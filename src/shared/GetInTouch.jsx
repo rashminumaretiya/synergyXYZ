@@ -8,7 +8,13 @@ import Shape1 from "../assets/image/png/git-shape1.png";
 import Shape2 from "../assets/image/png/git-shape2.png";
 import SYButton from "./SYButton";
 
-const GetInTouch = ({ heading, description, variant, theme }) => {
+const GetInTouch = ({
+  heading,
+  description,
+  variant,
+  descriptionClassName,
+  theme,
+}) => {
   return (
     <>
       <SYContainer>
@@ -29,7 +35,7 @@ const GetInTouch = ({ heading, description, variant, theme }) => {
             width={319}
             className={styles.shape2}
           />
-          <div className="position-relative z-2">
+          <div className="position-relative z-1">
             <div className="text-center">
               {theme === "light" ? (
                 <Image
@@ -43,8 +49,15 @@ const GetInTouch = ({ heading, description, variant, theme }) => {
               )}
             </div>
             <div className={styles.gitContent}>
-              <h2>{heading}</h2>
-              {description}
+              <h2 dangerouslySetInnerHTML={{ __html: heading }} />
+              {description &&
+                description?.map((item, i) => (
+                  <p
+                    key={i}
+                    className={descriptionClassName}
+                    dangerouslySetInnerHTML={{ __html: item }}
+                  />
+                ))}
               <div className="d-flex align-items-center gap-4 justify-content-center">
                 {variant?.map((data, index) => (
                   <SYButton

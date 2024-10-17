@@ -21,14 +21,12 @@ const HeroSection = () => {
       <div className={styles.lineHeadMain}>
         <SYContainer>
           <LineHead
-            description={
-              <>
+            description="
                 <span>Ready to take your brand to the next level? </span> We're
                 excited to hear from you. Whether you have a specific project in
                 mind or just want to explore possibilities, our team of experts
                 is here to help.
-              </>
-            }
+            "
           />
         </SYContainer>
       </div>

@@ -1454,3 +1454,90 @@ export const CheckIcon = () => {
     </svg>
   );
 };
+export const RightArrow = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="10"
+      height="9"
+      viewBox="0 0 10 9"
+      fill="none"
+    >
+      <script xmlns="" />
+      <path
+        d="M5.66667 1.16602L9 4.49935M9 4.49935L5.66667 7.83268M9 4.49935L1 4.49935"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+};
+export const MenuArrow = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="26"
+      height="11"
+      viewBox="0 0 26 11"
+      fill="none"
+    >
+      <script xmlns="" />
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M0.94165 11H25.3425C25.1472 10.511 24.8517 10.0528 24.4558 9.65685L15.9705 1.17157C14.4084 -0.390524 11.8757 -0.390524 10.3136 1.17157L1.82835 9.65685C1.43244 10.0528 1.13688 10.511 0.94165 11Z"
+        fill="white"
+      />
+    </svg>
+  );
+};
+export const MenuDownArrow = () => {
+  return (
+    <svg
+      width="12"
+      height="6"
+      viewBox="0 0 12 6"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M11.0332 0.999804L6.79749 4.63042C6.3481 5.01561 5.68497 5.01561 5.23559 4.63042L0.999871 0.999803"
+        stroke="#07070A"
+        stroke-width="1.1"
+        stroke-linecap="round"
+      />
+    </svg>
+  );
+};
+export const MenuIcon = () => {
+  return (
+    <svg
+      width="18"
+      height="16"
+      viewBox="0 0 18 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M1 1H17"
+        stroke="#2E3192"
+        stroke-width="2"
+        stroke-linecap="round"
+      />
+      <path
+        d="M1 8H17"
+        stroke="#2E3192"
+        stroke-width="2"
+        stroke-linecap="round"
+      />
+      <path
+        d="M1 15H17"
+        stroke="#2E3192"
+        stroke-width="2"
+        stroke-linecap="round"
+      />
+    </svg>
+  );
+};

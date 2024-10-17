@@ -17,8 +17,7 @@ const HeroSection = () => {
       <SYContainer>
         <div className={styles.lineHeadMain}>
           <LineHead
-            description={
-              <>
+            description="
                 <span>
                   We're not just another marketing agency—we're your AI-powered
                   creative partner.
@@ -26,8 +25,7 @@ const HeroSection = () => {
                 We combine cutting-edge AI technology with human creativity to
                 deliver innovative strategies and measurable results for your
                 brand, keeping you ahead in the ever-evolving market landscape.
-              </>
-            }
+            "
           />
         </div>
       </SYContainer>
