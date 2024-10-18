@@ -169,36 +169,38 @@ const Header = () => {
                             <MenuDownArrow />
                           </div>
                         )}
-                      </div>
-                      {menu?.badge && (
-                        <>
-                          <div
-                            className={`${styles.dropdownMenuMain} ${isActive ? styles.menuOpen : ""}`}
-                          >
-                            <div className={styles.arrow}>
-                              <MenuArrow />
-                            </div>
-                            <div className={styles.dropdownMenuWrapper}>
-                              {menu?.subMenu?.map((subList, listIndex) => {
-                                return (
-                                  <NavDropdown.Item
-                                    href="#action/3.1"
-                                    key={listIndex}
-                                  >
-                                    {subList?.label}
-                                    {/* {subList?.btn && (
+                        {menu?.badge && (
+                          <>
+                            <div
+                              className={`${styles.dropdownMainWrapper} ${isActive ? styles.menuOpen : ""}`}
+                            >
+                              <div className={styles.dropdownMenuMain}>
+                                <div className={styles.arrow}>
+                                  <MenuArrow />
+                                </div>
+                                <div className={styles.dropdownMenuWrapper}>
+                                  {menu?.subMenu?.map((subList, listIndex) => {
+                                    return (
+                                      <NavDropdown.Item
+                                        href="#action/3.1"
+                                        key={listIndex}
+                                      >
+                                        {subList?.label}
+                                        {/* {subList?.btn && (
                                         <SYButton variant="outline" hideArrow>
                                           See all
                                           <RightArrow />
                                         </SYButton>
                                       )} */}
-                                  </NavDropdown.Item>
-                                );
-                              })}
+                                      </NavDropdown.Item>
+                                    );
+                                  })}
+                                </div>
+                              </div>
                             </div>
-                          </div>
-                        </>
-                      )}
+                          </>
+                        )}
+                      </div>
                     </div>
                   ))}
                   <div
@@ -223,9 +225,7 @@ const Header = () => {
                     <GlobIcon />
                   </div>
                 </Nav>
-                <SYButton className="ms-3 d-sm-block d-none ">
-                  Start a project
-                </SYButton>
+                <SYButton className="ms-3">Start a project</SYButton>
               </Navbar.Collapse>
             </Navbar>
           </div>

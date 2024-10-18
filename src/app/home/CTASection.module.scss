@@ -71,12 +71,9 @@
       max-width: 366px;
       @media screen and (max-width: 991px) {
         flex-direction: column;
-        max-width: 70%;
+        max-width: 69%;
         text-align: center;
         margin: 0 auto;
-      }
-      @media screen and (max-width: 575px) {
-        max-width: 70%;
       }
       h2 {
         color: $primary;

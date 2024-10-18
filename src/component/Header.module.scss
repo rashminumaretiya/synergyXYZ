@@ -57,13 +57,20 @@
       @media screen and (max-width: 991px) {
         padding: 12px 32px;
         width: 100%;
+        flex-wrap: wrap;
       }
       &:hover {
         @media screen and (min-width: 992px) {
-          & ~ .dropdownMenuMain {
+          & .dropdownMainWrapper {
             opacity: 1;
             visibility: visible;
             transform: translate(-50%, 0);
+          }
+        }
+
+        .navLink {
+          &::after {
+            width: 100%;
           }
         }
       }
@@ -106,53 +113,54 @@
           top: -6px;
         }
       }
-      &:hover {
-        &::after {
-          width: 100%;
-        }
-      }
     }
-    .dropdownMenuMain {
+    .dropdownMainWrapper {
       opacity: 0;
       visibility: hidden;
       position: absolute;
       top: 100%;
       left: 50%;
       transform: translate(-50%, 15px);
-      background: $white;
-      width: max-content;
-      box-shadow: 0px 0px 50px rgba(167, 174, 186, 0.2);
-      border-radius: 16px;
-      height: auto;
-      padding: 20px;
-      margin-top: 40px;
+      padding-top: 40px;
       transition: all 0.2s ease-in-out;
       z-index: 1000;
       @media screen and (max-width: 991px) {
+        height: 0;
+        overflow: hidden;
         position: static;
         transform: translate(0);
         opacity: 1;
         visibility: visible;
         width: auto;
         padding: 0;
-        background-color: transparent;
-        margin-top: 0px;
-        height: 0;
-        overflow: hidden;
         transition: all 0s;
-        z-index: 1;
         &.menuOpen {
           height: 100%;
           overflow: visible;
           margin-top: 9px;
         }
       }
+    }
+    .dropdownMenuMain {
+      background: $white;
+      width: max-content;
+      box-shadow: 0px 0px 50px rgba(167, 174, 186, 0.2);
+      border-radius: 16px;
+      height: auto;
+      padding: 20px;
+      position: relative;
+      @media screen and (max-width: 991px) {
+        padding: 0;
+        background-color: transparent;
+        width: calc(100% + 64px);
+        margin-left: -32px;
+      }
       .arrow {
         position: absolute;
-        bottom: 100%;
+        bottom: 99.9%;
         left: 50%;
         transform: translateX(-50%);
-        height: 18px;
+        height: 11px;
         @media screen and (max-width: 991px) {
           display: none;
         }
@@ -173,8 +181,10 @@
           align-items: center;
           justify-content: space-between;
           color: rgba($black, 0.7);
+          transition: all 0.2s ease-in-out;
           &:hover {
             background-color: transparent;
+            color: $primary;
           }
           @media screen and (max-width: 991px) {
             display: block;
