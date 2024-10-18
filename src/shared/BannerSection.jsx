@@ -5,9 +5,10 @@ import SYContainer from "./SYContainer";
 const BannerSection = ({ ...props }) => {
   return (
     <div
-      className={`${styles.heroMain} ${props.overlay ? styles.overlay : ''}`}
+      className={styles.heroMain}
       style={{ backgroundImage: `url('${props.image}')` }}
     >
+      <div className={styles.linearOverlay}></div>
       <SYContainer className="h-100 position-relative z-1">
         <div className={`d-flex flex-column h-100 justify-content-end ${styles.heroHeadingWrapper}`}>
           <span>{props.subHead}</span>

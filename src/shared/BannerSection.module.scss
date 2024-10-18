@@ -3,23 +3,43 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
+  position: relative;
   @media screen and (max-width: 991px) {
     height: 700px;
   }
   @media screen and (max-width: 767px) {
     height: 622px;
   }
-  &.overlay{
-    &::after{
-      content: '';
-      background: linear-gradient(270deg, rgba(34, 31, 115, 0) 0%, #0B0B3C 75.72%);
-      background-blend-mode: multiply;
-      position: absolute;
-      right: 0;
-      left: 0;
-      top: 0;
-      bottom: 0;
-    }
+  &::after{
+    content: '';
+    background: linear-gradient(270deg, rgba(34, 31, 115, 0) 0%, #0B0B3C 75.72%);
+    mix-blend-mode: multiply;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+  }
+  &::before{
+    content: '';
+    background: linear-gradient(90deg, #2F308D -0.37%, #0054A6 49.81%, #662D91 100%);
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    mix-blend-mode: overlay;
+  }
+  .linearOverlay{
+    content: '';
+    position: absolute;
+    background: linear-gradient(6.28deg, rgba(0, 0, 0, 0.47) -31.14%, rgba(134, 134, 134, 0) 30.73%);
+    backdrop-filter: blur(10px);
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
   }
   .heroHeadingWrapper{
     @media screen and (max-width:767px) {
@@ -46,6 +66,9 @@
       line-height: 54px;
       max-width: 80%;
       margin-bottom: 40px;
+    }
+    @media screen and (max-width: 425px) {
+      max-width: 94%;
     }
   }
   span {

@@ -118,7 +118,10 @@ const HeartSection = () => {
       <p className={styles.descText}>
         Our core values that guide every aspect of our work
       </p>
-      <SYContainer>
+      <SYContainer className="position-relative">
+        <div className={`${styles.heartRing} ${styles.mobileHeartRing}`}>
+            <Image src={HeartRing} alt="Heart Ring" layout="responsive" />
+        </div>
         <div className={styles.heartWrapper}>
           <div className={styles.heartRing}>
             <Image src={HeartRing} alt="Heart Ring" layout="responsive" />
@@ -153,7 +156,7 @@ const HeartSection = () => {
                   onClick={() => handleCardClick(indexInArrayScope + index)} // Handle card click
                 >
                   <Image src={HeartContentBox} alt="Heart Content Box" />
-                  <div className={styles.heartContent}>
+                  <div className={`${styles.heartContent} desc`}>
                     <h4>{wrapCapitalizedLetters(item.title)}</h4>
                     <p>{item.description}</p>
                   </div>

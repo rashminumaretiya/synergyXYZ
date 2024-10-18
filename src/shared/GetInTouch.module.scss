@@ -52,6 +52,10 @@
       font-family: "raleway-semibold";
       max-width: 1050px;
       margin: 0 auto;
+      @media screen and (max-width: 425px) {
+        font-size: 28px;
+        line-height: 36px;
+      }
     }
     p {
       font-size: 20px;
