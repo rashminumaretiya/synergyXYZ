@@ -11,6 +11,10 @@
     margin: 24px 0;
     padding: 80px 24px;
   }
+  @media screen and (max-width: 575px) {
+    margin: 20px 0;
+    padding: 50px 15px;
+  }
   &.gitMainLight {
     background-color: $white;
     color: $primary;
@@ -52,9 +56,13 @@
       font-family: "raleway-semibold";
       max-width: 1050px;
       margin: 0 auto;
-      @media screen and (max-width: 425px) {
+      @media screen and (max-width: 575px) {
         font-size: 28px;
         line-height: 36px;
+      }
+      @media screen and (max-width: 425px) {
+        font-size: 24px;
+        line-height: 30px;
       }
     }
     p {

@@ -22,32 +22,27 @@ const menuList = [
     badge: 10,
     href: "/services",
     subMenu: [
-      { label: "Branding", btn: true },
-      { label: "Creative Content" },
-      { label: "Media Services" },
-      { label: "Content Strategy" },
-      { label: "Commerce & eCommerce" },
-      { label: "Customer Relationship Management (CRM)" },
-      { label: "Partnership" },
-      { label: "Events & Activations" },
-      { label: "Data Analytics" },
-      { label: "Tech" },
+      { label: "Branding", btn: true, link: "/services/branding" },
+      { label: "Creative Content", link: "/services/content-strategy" },
+      { label: "Media Services", link: "/services/creative-content" },
+      { label: "Content Strategy", link: "/services/media" },
+      { label: "Commerce & eCommerce", link: "/services/commerce-e-commerce" },
+      {
+        label: "Customer Relationship Management (CRM)",
+        link: "/services/customer-relationship-management",
+      },
+      { label: "Partnership", link: "/services/partnership" },
+      { label: "Events & Activations", link: "/services/events-activations" },
+      { label: "Data Analytics", link: "/services/data-analytics" },
+      { label: "Tech", link: "/services/technology" },
     ],
   },
-  { label: "Our Approach", href: "/our-approach" },
-  { label: "About Us", href: "/about-us" },
-  { label: "Contact", href: "/contact" },
+  { label: "Our Approach", href: "our-approach" },
+  { label: "About Us", href: "about" },
+  { label: "Contact", href: "contact" },
 ];
 
 const Header = () => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const abcd = (a) => {
-    console.log("cds", a);
-    if (a) {
-      setDropdownOpen(true);
-    }
-  };
-
   const [isActive, setIsActive] = useState(false);
 
   const handleToggle = () => {
@@ -60,12 +55,10 @@ const Header = () => {
   const languageOptions = [
     { value: "en", label: "English" },
     { value: "th", label: "Thailand" },
-    // Add more languages as needed
   ];
 
   const handleChange = (selectedOption) => {
     setSelectedLanguage(selectedOption);
-    console.log(`Selected language:`, selectedOption);
   };
 
   // Select Style
@@ -152,7 +145,7 @@ const Header = () => {
                   {menuList?.map((menu, menuIndex) => (
                     <div key={menuIndex} className="position-relative w-100">
                       <div className={styles.navLinkWrapper}>
-                        <Nav.Link href={menu.href} className={styles.navLink}>
+                        <Link href={menu.href} className={styles.navLink}>
                           {menu?.label}
 
                           {menu.badge && (
@@ -160,7 +153,7 @@ const Header = () => {
                               {menu.badge}
                             </span>
                           )}
-                        </Nav.Link>
+                        </Link>
                         {menu.badge && (
                           <div
                             className={`d-flex d-lg-none ${styles.arrow}`}
@@ -182,10 +175,12 @@ const Header = () => {
                                   {menu?.subMenu?.map((subList, listIndex) => {
                                     return (
                                       <NavDropdown.Item
-                                        href="#action/3.1"
+                                        as="div"
                                         key={listIndex}
                                       >
-                                        {subList?.label}
+                                        <Link href={subList.link}>
+                                          {subList?.label}
+                                        </Link>
                                         {/* {subList?.btn && (
                                         <SYButton variant="outline" hideArrow>
                                           See all

@@ -7,11 +7,31 @@
     position: relative;
     z-index: 1;
     overflow: hidden;
+    &:after {
+        content: "";
+        background-image: url('../../../assets/image/png/service-detail-shape.png');
+        height: 123px;
+        width: 100%;
+        background-size: cover;
+        background-position: left top;
+    }
     h2 {
         color: $white;
         font-family: "raleway-semibold";
         font-size: 64px;
         line-height: 80px;
+        @media screen and (max-width: 991px) {
+            font-size: 50px;
+            line-height: 66px;
+        }
+        @media screen and (max-width: 767px) {
+            font-size: 40px;
+            line-height: 56px;
+        }
+        @media screen and (max-width: 575px) {
+            font-size: 30px;
+            line-height: 44px;
+        }
     }
     span {
         color: $lightGray100;

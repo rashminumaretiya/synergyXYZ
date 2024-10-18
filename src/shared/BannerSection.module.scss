@@ -10,6 +10,9 @@
   @media screen and (max-width: 767px) {
     height: 622px;
   }
+  @media screen and (max-width: 575px) {
+    height: 500px;
+  }
   &::after{
     content: '';
     background: linear-gradient(270deg, rgba(34, 31, 115, 0) 0%, #0B0B3C 75.72%);

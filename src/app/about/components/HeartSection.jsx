@@ -26,21 +26,6 @@ const HeartSection = () => {
       description:
         "We believe in the power of thoughtful planning and precise execution, ensuring purpose in every action we take.",
     },
-    {
-      title: "SYNthesis",
-      description:
-        "We unite diverse ideas into powerful and innovative solutions, driving real results for our clients",
-    },
-    {
-      title: "enERgy",
-      description:
-        "We approach each project with excitement and enthusiasm, driving innovation and sparking creativity.",
-    },
-    {
-      title: "strateGY",
-      description:
-        "We believe in the power of thoughtful planning and precise execution, ensuring purpose in every action we take.",
-    },
   ];
 
   const wrapCapitalizedLetters = (text) => {
@@ -81,6 +66,14 @@ const HeartSection = () => {
     handleClick(newDirection); // Call handleClick with the determined direction
   };
 
+  const handleDragEnd = (event, info) => {
+    if (info.offset.x > 50) {
+      handleClick(-1); // Slide left
+    } else if (info.offset.x < -50) {
+      handleClick(1); // Slide right
+    }
+  };
+
   const variants = {
     enter: ({ direction }) => ({
       x: direction < 1 ? 50 : -50,
@@ -108,6 +101,10 @@ const HeartSection = () => {
     };
     return indexes[position()];
   }
+  const handleDotClick = (index) => {
+    const newDirection = index > activeIndex ? 1 : -1;
+    setActiveIndex([index, newDirection]);
+  };
 
   return (
     <div className={styles.mainWrapper}>
@@ -120,7 +117,7 @@ const HeartSection = () => {
       </p>
       <SYContainer className="position-relative">
         <div className={`${styles.heartRing} ${styles.mobileHeartRing}`}>
-            <Image src={HeartRing} alt="Heart Ring" layout="responsive" />
+          <Image src={HeartRing} alt="Heart Ring" layout="responsive" />
         </div>
         <div className={styles.heartWrapper}>
           <div className={styles.heartRing}>
@@ -154,6 +151,10 @@ const HeartSection = () => {
                   exit="exit"
                   transition={{ type: "spring", stiffness: 300, damping: 30 }} // Smooth spring transition
                   onClick={() => handleCardClick(indexInArrayScope + index)} // Handle card click
+                  drag="x"
+                  dragConstraints={{ left: 0, right: 0 }}
+                  dragElastic={0.5}
+                  onDragEnd={handleDragEnd}
                 >
                   <Image src={HeartContentBox} alt="Heart Content Box" />
                   <div className={`${styles.heartContent} desc`}>
@@ -165,6 +166,18 @@ const HeartSection = () => {
             </AnimatePresence>
           </div>
         </div>
+        <div className={styles.customDots}>
+          {items.slice(0, 3).map((_, index) => (
+            <button
+              key={index}
+              className={`${styles.dot} ${
+                indexInArrayScope === index ? styles.activeDot : ""
+              }`}
+              onClick={() => handleDotClick(index)}
+            />
+          ))}
+        </div>
+        <p className={styles.scrollText}>Slide to reveal our heart</p>
       </SYContainer>
     </div>
   );

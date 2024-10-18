@@ -45,5 +45,12 @@
       margin-top: -250px;
       margin-bottom: 80px;
     }
+    @media screen  and (max-width: 767px) {
+      margin-bottom: 50px;
+    }
+    @media screen  and (max-width: 575px) {
+      margin-bottom: 0px;
+      margin-top: -230px;
+    }
   }
 }

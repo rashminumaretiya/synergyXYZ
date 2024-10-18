@@ -5,6 +5,10 @@
     margin-bottom: 44px;
     padding-bottom: 44px;
   }
+  @media screen and (max-width:575px) {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+  }
   .wrapper {
     padding: 0 120px;
     @media screen and (max-width: 1199px) {

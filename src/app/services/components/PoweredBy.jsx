@@ -50,7 +50,7 @@ const PoweredBy = () => {
           {rows?.map((row, rowIndex) => (
             <SYRow key={rowIndex} className="justify-content-center">
               {row?.map((item, index) => (
-                <SYCol key={index} xs={12} sm={6} md={4}>
+                <SYCol key={index} xs={12} sm={6} lg={4}>
                   <div className={styles.itemWrapper}>
                     <Image
                       src={item?.src}

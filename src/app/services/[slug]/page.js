@@ -3,7 +3,6 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import BgShape from "../../../assets/image/png/bg-shape.png";
 import serviceBubble from "../../../assets/image/png/service-bubble.png";
-import serviceDetailShape from "../../../assets/image/png/service-detail-shape.png";
 import serviceShape1 from "../../../assets/image/png/service-shape1.png";
 import serviceShape2 from "../../../assets/image/png/service-shape2.png";
 import {
@@ -65,13 +64,7 @@ const Page = ({ params }) => {
           <Image src={serviceShape2} alt="serviceDetailShape" />
         </div>
         <SYContainer>
-          <SYRow className="align-items-end">
-            <SYCol md={8}>
-              <span>{data?.bannerInfo?.name} —</span>
-              <h2
-                dangerouslySetInnerHTML={{ __html: data?.bannerInfo?.title }}
-              />
-            </SYCol>
+          <SYRow className="align-items-end flex-row-reverse">
             <SYCol md={4}>
               <div className={styles.serviceBubble}>
                 <div className={styles.serviceBubbleIcon}>
@@ -80,13 +73,14 @@ const Page = ({ params }) => {
                 <Image src={serviceBubble} alt="serviceBubble" />
               </div>
             </SYCol>
+            <SYCol md={8}>
+              <span>{data?.bannerInfo?.name} —</span>
+              <h2
+                dangerouslySetInnerHTML={{ __html: data?.bannerInfo?.title }}
+              />
+            </SYCol>
           </SYRow>
         </SYContainer>
-        <Image
-          src={serviceDetailShape}
-          alt="serviceDetailShape"
-          layout="responsive"
-        />
       </div>
       <SYContainer>
         <LineHead description={data?.bannerInfo?.description} />

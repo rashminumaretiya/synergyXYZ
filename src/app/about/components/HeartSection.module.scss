@@ -38,7 +38,7 @@
     transform: translateY(-50%);
   }
   @media screen and (max-width:375px) {
-    top: 48%;
+    top: 40%;
   }
 }
 .heartWrapper {
@@ -184,7 +184,37 @@
       p {
         color: $white;
         font-weight: 100;
+        @media screen and (max-width: 480px) {
+          font-size: 15px;
+        }
       }
     }
+  }
+}
+.customDots {
+  text-align: center;
+  margin-top: 20px;
+  @media screen and (min-width: 575px) {
+    display: none;
+  }
+  .dot {
+    border-radius: 100%;
+    background-color: rgba($white, 0.3);
+    width: 8px;
+    height: 8px;
+    border: 0;
+    padding: 0;
+    margin: 0 4px;
+    &.activeDot {
+      background-color: $secondary;
+    }
+  }
+}
+.scrollText {
+  color: $lightGray100;
+  text-align: center;
+  margin-top: 20px;
+  @media screen and (min-width: 575px) {
+    display: none;
   }
 }

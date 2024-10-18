@@ -4,14 +4,17 @@
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
-  background-position: right;
+  background-position: right top;
   z-index: 9;
+  @media screen and (max-width: 1199px) {
+    padding: 200px 0 54px
+  }
   @media screen and (max-width: 767px) {
     padding: 160px 0 54px;
+    background-position: 90% center;
   }
   @media screen and (max-width: 575px) {
     padding: 140px 0 54px;
-    background-position: 90%;
   }
   .footerWrapper {
     padding: 32px;

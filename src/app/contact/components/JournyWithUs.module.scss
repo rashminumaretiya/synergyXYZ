@@ -1,4 +1,4 @@
-.journyWithUsMain {
+.journeyWithUsMain {
   background-color: $primary100;
   position: relative;
   z-index: 1;
@@ -6,6 +6,26 @@
   padding-bottom: 500px;
   margin-bottom: -420px;
   overflow: hidden;
+  &::before {
+    content: "";
+    position: relative;
+    z-index: 1;
+    background-image: url("../../../assets//image/png//bg-shape.png");
+    height: 220px;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right center;
+    @media screen and (max-width: 1280px) {
+      height: 170px;
+    }
+    @media screen and (max-width: 991px) {
+      height: 120px;
+    }
+    @media screen and (max-width: 767px) {
+      height: 80px;
+    }
+  }
   &::after {
     z-index: -1;
     content: "";
@@ -27,6 +47,9 @@
     line-height: 26px;
     text-align: center;
     color: $lightGray100;
+    @media screen and (max-width: 767px) {
+      font-size: 18px;
+    }
   }
   .formWrapper {
     padding: 0 170px;
@@ -34,6 +57,15 @@
     border-radius: 20px;
     padding: 60px 80px;
     position: relative;
+    @media screen and (max-width: 767px) {
+      padding: 40px 60px;
+    }
+    @media screen and (max-width: 575px) {
+      padding: 32px 40px;
+    }
+    @media screen and (max-width: 480px) {
+      padding: 32px 24px;
+    }
     &:after {
       content: "";
       position: absolute;
@@ -56,7 +88,7 @@
     align-items: center;
     input[type="checkbox"] {
       -webkit-appearance: none;
-      width: 16px;
+      min-width: 16px;
       height: 16px;
       border: 1px solid #2e3092;
       border-radius: 3px;

@@ -12,10 +12,11 @@ import loyalCustomer from "../../../assets/image/png/loyal-customer.png";
 import seamlessStrategyHexa from "../../../assets/image/png/seamless-strategy-hexa.png";
 import seamlesssStrategyLine from "../../../assets/image/png/seamless-strategy-line.png";
 import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import SYSwiper from "../../../shared/SYSwiper";
 import SYButton from "../../../shared/SYButton";
 
 const seamlessStrategy = [
@@ -122,7 +123,7 @@ Tailored to your Brand's Unique Needs. "
           <SYRow className="justify-content-center">
             <SYCol md={12}>
               <div className={styles.seamlessStrategyWrapper}>
-                <Swiper
+                <SYSwiper
                   slidesPerView={5}
                   modules={[Pagination]}
                   pagination={{
@@ -134,12 +135,15 @@ Tailored to your Brand's Unique Needs. "
                   }}
                   breakpoints={{
                     0: {
-                      slidesPerView: 2,
+                      slidesPerView: 1.5,
                     },
-                    768: {
-                      slidesPerView: 4,
+                    992: {
+                      slidesPerView: 3,
                     },
                     1199: {
+                      slidesPerView: 4,
+                    },
+                    1280: {
                       slidesPerView: 5,
                     },
                   }}
@@ -180,7 +184,7 @@ Tailored to your Brand's Unique Needs. "
                       )}
                     </SwiperSlide>
                   ))}
-                </Swiper>
+                </SYSwiper>
                 <div className={styles.seamlessStrategyBtn}>
                   <SYButton
                     hideArrow

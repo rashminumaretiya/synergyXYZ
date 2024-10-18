@@ -2,8 +2,6 @@
   .wrapper {
     display: flex;
     flex-direction: column;
-    gap: 40px 0;
-    padding-bottom: 50px;
   }
   .itemWrapper {
     display: flex;
@@ -11,8 +9,27 @@
     gap: 24px;
     color: $secondary100;
     max-width: 374px;
+    margin-bottom: 30px;
+    @media screen and (max-width: 1199px) {
+      gap: 15px;
+    }
     h5 {
       font-family: "raleway-medium";
+      line-height: normal;
+      @media screen and (max-width: 1199px) {
+        font-size: 20px;
+      }
+      @media screen and (max-width: 767px) {
+        font-size: 18px;
+      }
+    }
+    img {
+      width: 64px;
+      height: 64px;
+      @media screen and (max-width: 767px) {
+        width: 50px;
+        height: 50px;
+      }
     }
   }
 }

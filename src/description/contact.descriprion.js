@@ -36,7 +36,10 @@ export const contactForm = [
       id: "service",
       label: "Type of Service",
       placeholder: "-choose-",
-      menu: ["Service 1", "service 2"],
+      menu: [
+        { value: "service1", label: "Service 1" },
+        { value: "service2", label: "Service 2" },
+      ],
     },
   },
   {
@@ -44,7 +47,10 @@ export const contactForm = [
       id: "objective",
       label: "Objective",
       placeholder: "-choose-",
-      menu: ["Objective 1", "Objective 2"],
+      menu: [
+        { value: "objective1", label: "Objective 1" },
+        { value: "objective2", label: "Objective 2" },
+      ],
     },
   },
   {

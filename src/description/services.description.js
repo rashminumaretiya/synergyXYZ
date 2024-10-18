@@ -15,12 +15,14 @@ export const serviceBox = [
     description: "Transform your brand into an unforgettable experience. ",
     bgColor: "#C40F39",
     src: Image1,
+    link: "/services/branding",
   },
   {
     head: "Content Strategy",
     description: "Align your content with business goals for maximum impact. ",
     bgColor: "#06AEEF",
     src: Image2,
+    link: "/services/content-strategy",
   },
   {
     head: "Creative Content",
@@ -28,6 +30,7 @@ export const serviceBox = [
       "Engage your audience with powerful storytelling across all mediums. ",
     bgColor: "#C40F39",
     src: Image3,
+    link: "/services/creative-content",
   },
   {
     head: "Media",
@@ -35,6 +38,7 @@ export const serviceBox = [
       "Amplify your message to reach the right audience at the right time. ",
     bgColor: "#9B6C22",
     src: Image4,
+    link: "/services/media",
   },
   {
     head: "Commerce & E-commerce",
@@ -42,6 +46,7 @@ export const serviceBox = [
       "Create seamless shopping experiences that drive sales and foster loyalty across all channels.",
     bgColor: "#9C8C22",
     src: Image5,
+    link: "/services/commerce-e-commerce",
   },
   {
     head: "Partnership",
@@ -49,12 +54,14 @@ export const serviceBox = [
       "Connect your brand with authentic voices that resonate with your audience. ",
     bgColor: "#FDB814",
     src: Image6,
+    link: "/services/partnership",
   },
   {
     head: "Events & Activations",
     description: "Create memorable experiences that bring your brand to life. ",
     bgColor: "#F36F21",
     src: Image7,
+    link: "/services/events-activations",
   },
   {
     head: "Customer Relationship Management (CRM)",
@@ -62,6 +69,7 @@ export const serviceBox = [
       "Build lasting customer relationships that drive long-term value. ",
     bgColor: "#FFDE02",
     src: Image8,
+    link: "/services/customer-relationship-management",
   },
   {
     head: "Data Analytics",
@@ -69,6 +77,7 @@ export const serviceBox = [
       "Transform data into actionable insights that drive business growth. ",
     bgColor: "#05A551",
     src: Image9,
+    link: "/services/data-analytics",
   },
   {
     head: "Technology",
@@ -76,5 +85,6 @@ export const serviceBox = [
       "Power your digital transformation with innovative technology solutions. ",
     bgColor: "#A6CE39",
     src: Image10,
+    link: "/services/technology",
   },
 ];
