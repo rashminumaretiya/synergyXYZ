@@ -56,11 +56,13 @@ const CTASection = () => {
   return (
     <div className={styles.CTASectionMain}>
       <SYContainer className="position-relative z-1">
-        <LineHead
-          white={true}
-          description="As an AI-powered marketing agency based in in Malaysia, we combine creative 
-innovation with the latest technology to help your brand thrive. Our conventional and digital marketing services keep your business ahead of the curve."
-        />
+        <div className={styles.lineHeadMain}>
+          <LineHead
+            white={true}
+            description="As an AI-powered marketing agency based in in Malaysia, we combine creative 
+          innovation with the latest technology to help your brand thrive. Our conventional and digital marketing services keep your business ahead of the curve."
+          />
+        </div>
         <div
           className={`d-lg-flex align-items-center justify-content-between mx-3 ${styles.boxMain}`}
         >
@@ -106,7 +108,7 @@ innovation with the latest technology to help your brand thrive. Our conventiona
               </SYCol>
             ))}
           </SYRow>
-          <div className="text-center mt-5 pt-3">
+          <div className="text-center mt-5">
             <SYButton variant="white">Find out more about us</SYButton>
           </div>
         </div>

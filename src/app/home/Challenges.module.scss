@@ -1,10 +1,20 @@
 .challengesMain {
   padding-bottom: 50px;
   margin-top: 40px;
+  @media screen and (max-width: 575px) {
+    padding-bottom: 40px;
+    margin-top: 24px;
+    h2 {
+      padding: 0 16px;
+    }
+  }
   .challengesWrapper {
     gap: 32px 0 !important;
     & > div {
       padding: 0 20px;
+      @media screen and (max-width: 768px) {
+        padding: 0 8px;
+      }
     }
   }
   .challengeBox {
@@ -12,5 +22,29 @@
     gap: 24px;
     align-items: center;
     color: $secondary100;
+    @media screen and (max-width: 1199px) {
+      gap: 16px;
+      h5 {
+        font-size: 22px;
+      }
+    }
+    @media screen and (max-width: 768px) {
+      h5 {
+        line-height: 28px;
+        font-size: 20px;
+      }
+    }
+    @media screen and (max-width: 575px) {
+      padding: 0 36px;
+      h5 {
+        font-size: 22px;
+      }
+    }
+    .challengeImage {
+      @media screen and (max-width: 1199px) {
+        max-width: 48px;
+        max-height: 48px;
+      }
+    }
   }
 }

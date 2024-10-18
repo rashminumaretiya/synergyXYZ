@@ -4,16 +4,34 @@
   color: $white;
   padding-bottom: 350px;
   overflow: hidden;
+  @media screen and (max-width: 991px) {
+    padding-bottom: 55px;
+  }
   &::before {
     content: "";
     position: relative;
     z-index: 1;
-    background-image: url(../../assets//image/png//bg-shape.png);
+    background-image: url(../../assets//image/png//bg-shape1.png);
     height: 220px;
     display: block;
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: right center;
+    background-size: 200%;
+    background-position: 17% bottom;
+    @media screen and (max-width: 991px) {
+      height: 100px;
+      background-position: 60% bottom;
+    }
+    @media screen and (max-width: 767px) {
+      background-size: 270%;
+      background-position: 68% 150%;
+      height: 200px;
+    }
+    @media screen and (max-width: 575px) {
+      height: 160px;
+    }
+    @media screen and (max-width: 479px) {
+      height: 140px;
+    }
   }
   &::after {
     content: "";
@@ -52,7 +70,7 @@
     @media screen and (max-width: 1399px) {
       gap: 40px;
       padding: 50px 40px;
-      margin-top: 100px;
+      margin: 100px 0;
     }
     @media screen and (max-width: 1199px) {
       gap: 20px;
@@ -60,6 +78,8 @@
     }
     @media screen and (max-width: 767px) {
       padding: 30px 40px;
+      margin-top: 85px;
+      margin-bottom: 64px;
     }
     @media screen and (max-width: 575px) {
       padding: 20px;
@@ -92,6 +112,17 @@
           line-height: 1.25;
         }
       }
+    }
+  }
+  .lineHeadMain {
+    @media screen and (max-width: 1199px) {
+      padding-top: 40px;
+    }
+    @media screen and (max-width: 767px) {
+      padding-top: 0px;
+    }
+    @media screen and (max-width: 575px) {
+      padding-top: 50px;
     }
   }
 }

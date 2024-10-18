@@ -139,7 +139,7 @@ const Header = () => {
                 <MenuIcon />
               </Navbar.Toggle>
               <Navbar.Collapse
-                className={styles.navCollapse}
+                className={`${styles.navCollapse}`}
                 id="basic-navbar-nav"
               >
                 <Navbar.Toggle

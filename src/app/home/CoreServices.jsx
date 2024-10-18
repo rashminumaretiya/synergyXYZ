@@ -271,7 +271,11 @@ const CoreServices = () => {
                           <Image src={shadowActive} alt="shadowActive" />
                         </div>
                         {card.bubbleImage && (
-                          <Image src={card.bubbleImage} alt="bubble" />
+                          <Image
+                            src={card.bubbleImage}
+                            alt="bubble"
+                            className={styles.bubbleImage}
+                          />
                         )}
                         <Image
                           className={styles.icon}
