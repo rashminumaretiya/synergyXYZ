@@ -31,7 +31,7 @@ const CircleJourney = ({ list, heading }) => {
     return () => {
       window.removeEventListener("resize", calculateJourneyStepsWidthWidth);
     };
-  }, []);
+  }, [list?.length]);
 
   useEffect(() => {
     const handleWheel = (e) => {
@@ -57,7 +57,7 @@ const CircleJourney = ({ list, heading }) => {
         container.removeEventListener("wheel", handleWheel);
       }
     };
-  }, [list.length, journeyStepsWidth, halfScreenWidth]);
+  }, [list?.length, journeyStepsWidth, halfScreenWidth]);
 
   useEffect(() => {
     controls.start({ x: halfScreenWidth - scrollPosition });
