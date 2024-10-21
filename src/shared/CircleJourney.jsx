@@ -90,16 +90,18 @@ const CircleJourney = ({ list, heading }) => {
   // Handle click to activate and center slides
   const handleCardClick = (index) => {
     setActiveSlide(index);
-    // Activate all previous slides including the clicked one
-    const newActiveSlides = Array.from({ length: index + 1 }, (_, i) => i);
-    setActiveSlides(newActiveSlides);
+    setActiveSlides((prev) => {
+      const uniqueSlides = new Set([...prev, index]);
+      return Array.from(uniqueSlides);
+    });
   };
 
   const handleDotClick = (index) => {
     setActiveSlide(index);
-    // Activate all previous slides including the clicked one
-    const newActiveSlides = Array.from({ length: index + 1 }, (_, i) => i);
-    setActiveSlides(newActiveSlides);
+    setActiveSlides((prev) => {
+      const uniqueSlides = new Set([...prev, index]);
+      return Array.from(uniqueSlides);
+    });
   };
 
   let cardNum = 0;
