@@ -12,7 +12,26 @@
     border-radius: 20px;
     padding: 20px;
     position: relative;
-    margin-top: 50px;
+    max-width: 1090px;
+    margin: 50px auto 0;
+    @media screen and (max-width: 1280px) {
+        max-width: 880px;  
+    }
+    @media screen and (max-width: 1199px) {
+        max-width: 670px;  
+    }
+    @media screen and (max-width: 991px) {
+        max-width: 565px;  
+    }
+    @media screen and (max-width: 767px) {
+        padding: 10px 5px;
+    }
+    @media screen and (max-width: 575px) {
+        max-width: 535px;  
+    }
+    @media screen and (max-width: 480px) {
+        max-width: 388px;  
+    }
     &:before {
         content: "";
         background: linear-gradient(90deg, #0088AC -0.37%, #0054A6 117.31%, #662D91 234.99%);
@@ -55,6 +74,18 @@
     :global(.swiper-slide) {
         position: inherit;
         height: auto;
+        .seamlessStrategyLine {
+            position: absolute;
+            left: 0;
+            top: 180px;
+            pointer-events: none;
+            z-index: 8;
+            overflow: hidden;
+            right: 0;
+            @media screen and (max-width: 425px) {
+                top: 172px;
+            }
+        } 
         &:first-child {
             .mapContent {
                 .mapBox {
@@ -75,13 +106,17 @@
             .strategyWrapper {
                 .strategy {
                     &:first-child {
-                        top: 170px;
+                        top: 160px;
                     }
                     &:nth-child(2) {
-                        bottom: 45px;
+                        bottom: 32px;
                         right: -54px;
                     }
                 }
+            }
+            .seamlessStrategyLine {
+                right: 1%;
+                left: auto;
             }
         }
         &:nth-child(2) {
@@ -90,13 +125,21 @@
                     &:first-child {
                         margin-top: auto;
                         padding-top: 32px;
+                        @media screen and (max-width: 1280px) {
+                            padding-top: 35px;
+                        }
                     }
                     &:last-child {
                         margin-bottom: auto;
                         padding-top: 40px;
+                        justify-content: flex-start;
+                        @media screen and (max-width: 1280px) {
+                            padding-top: 42px;
+                        }
                     }
                     h6 {
                         color: $secondary100;
+                        width: 82px;
                         &:before {
                             background-color: $secondary100;
                             box-shadow: 0 0 0 4px rgba($secondary100, 0.5);
@@ -119,7 +162,7 @@
             .mapContent {
                 .mapBox {
                     &:first-child {
-                        margin-top: 145px;
+                        margin-top: 130px;
                     }
                     h6 {
                         color: $purple;
@@ -139,19 +182,19 @@
                         margin: 0 auto;
                     }
                     &:nth-child(2) {
-                        bottom: 240px;
+                        bottom: 200px;
                         right: 0;
                         left: 0;
                         margin: 0 auto;
                     }
                     &:nth-child(3) {
-                        bottom: 100px;
+                        bottom: 70px;
                         right: 0;
                         left: 0;
                         margin: 0 auto;
                     }
                 }
-            }         
+            }       
         }
         &:nth-child(4) {
             .mapContent {
@@ -159,6 +202,9 @@
                     &:nth-child(2) {
                         margin-top: auto;
                         padding-top: 40px;
+                        @media screen and (max-width: 1280px) {
+                            padding-top: 42px;
+                        }
                     }
                     h6 {
                         color: $primary;
@@ -176,7 +222,7 @@
                         right: -50px;
                     }
                 }
-            }                  
+            }        
         }
         &:nth-child(5) {
             .mapContent {
@@ -194,21 +240,12 @@
                         }
                     }
                 }
-            }            
+            }          
         }
         &:nth-child(2n) {
             background-color: $lightGray300;
         }
         
-    }
-    .seamlessStrategyLine {
-        position: absolute;
-        right: 0;
-        left: 40px;
-        top: 180px;
-        width: 1160px;
-        pointer-events: none;
-        z-index: 8;
     }
     .title {
         color: $primary;
@@ -222,13 +259,16 @@
         flex-direction: column;
         flex: 1;
         .mapBox {
-            height: 147px;
+            height: 133px;
             display: flex;
             padding-top: 28px;
             text-align: center;
             justify-content: center;
             position: relative;
             z-index: 9;
+            @media screen and (max-width: 1280px) {
+                padding-top: 32px;
+            }
             h6 {
                 width: 92px;
                 position: relative;
@@ -250,12 +290,21 @@
             }
             &:nth-child(2) {
                 padding-top: 32px;
+                @media screen and (max-width: 1280px) {
+                    padding-top: 35px;
+                }
             }
             &:nth-child(3) {
                 padding-top: 40px;
+                @media screen and (max-width: 1280px) {
+                    padding-top: 42px;
+                }
             }
             &:last-child {
                 padding-top: 34px;
+                @media screen and (max-width: 1280px) {
+                    padding-top: 38px;
+                }
             }
         }
     }
@@ -282,7 +331,7 @@
         text-align: center;
         margin-top: 10px;
         :global(.swiper-pagination-bullet) {
-            background-color: rgba($black, 0.2);
+            background-color: rgba($black, 0.8);
             &:global(.swiper-pagination-bullet-active) {
                 background-color: $secondary;
             }

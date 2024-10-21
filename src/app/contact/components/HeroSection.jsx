@@ -11,12 +11,9 @@ const HeroSection = () => {
       <BannerSection
         image={BGImage.src}
         subHead="GET IN TOUCH —"
-        heading={
-          <>
+        heading={`
             Let's Create Something
-            <br /> Extraordinary Together
-          </>
-        }
+            <br /> Extraordinary Together`}
       />
       <div className={styles.lineHeadMain}>
         <SYContainer>

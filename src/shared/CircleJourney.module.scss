@@ -15,7 +15,7 @@
                 background-image: url('../assets/image/svg/journeySingleLine.svg');
                 height: 2px;
                 width: 100%;
-                margin-right: 100px;
+                margin-right: 50px;
             }
             .slide {
                 position: relative;
@@ -27,8 +27,9 @@
                     height: 2px;
                     width: 100vw;
                     top: 50%;
+                    margin-left: 50px;
                 }
-                &.active {
+                &.active, &.activeSlide {
                     .bubbleWrapper {
                         display: none;
                     }
@@ -37,7 +38,8 @@
                     }
                 }
                 .slideInner {
-                    margin-left: -100px;
+                    margin-left: -50px;
+                    margin-right: -50px;
                     .bubbleWrapper {
                         position: relative;
                         h6 {

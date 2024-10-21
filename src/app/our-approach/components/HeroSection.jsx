@@ -1,23 +1,20 @@
 "use client";
 import React from "react";
 import SYContainer from "../../../shared/SYContainer";
-import styles from "./HroSection.module.scss";
+import styles from "./HeroSection.module.scss";
 import LineHead from "../../../shared/LineHead";
+import BannerSection from "../../../shared/BannerSection";
+import Img from "../../../assets/image/png/our-approach-banner.png";
 
 const HeroSection = () => {
   return (
     <>
-      <div className={styles.heroMain}>
-        <SYContainer className="h-100">
-          <div className="d-flex flex-column h-100 justify-content-end">
-            <span>OUR APPROACH —</span>
-            <h2>
-              The BM@P Framework: <br />
-              Shaping the Future of Marketing, Today.
-            </h2>
-          </div>
-        </SYContainer>
-      </div>
+      <BannerSection
+        image={Img.src}
+        subHead="OUR APPROACH —"
+        heading={` The BM@P Framework: <br />
+              Shaping the Future of Marketing, Today.`}
+      />
       <SYContainer>
         <div className={styles.lineHeadMain}>
           <LineHead

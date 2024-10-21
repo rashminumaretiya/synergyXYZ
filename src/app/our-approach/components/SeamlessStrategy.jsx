@@ -10,7 +10,11 @@ import media from "../../../assets/image/png/media.png";
 import creativeContent from "../../../assets/image/png/creative-content.png";
 import loyalCustomer from "../../../assets/image/png/loyal-customer.png";
 import seamlessStrategyHexa from "../../../assets/image/png/seamless-strategy-hexa.png";
-import seamlesssStrategyLine from "../../../assets/image/png/seamless-strategy-line.png";
+// import seamlesssStrategyLine1 from "../../../assets/image/png/seamless-strategy-card-1-line.png";
+import seamlesssStrategyLine2 from "../../../assets/image/png/seamless-strategy-card-2-line.png";
+import seamlesssStrategyLine3 from "../../../assets/image/png/seamless-strategy-card-3-line.png";
+import seamlesssStrategyLine4 from "../../../assets/image/png/seamless-strategy-card-4-line.png";
+import seamlesssStrategyLine5 from "../../../assets/image/png/seamless-strategy-card-5-line.png";
 import Image from "next/image";
 import { SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
@@ -18,12 +22,20 @@ import "swiper/css";
 import "swiper/css/pagination";
 import SYSwiper from "../../../shared/SYSwiper";
 import SYButton from "../../../shared/SYButton";
+import {
+  SeamlesssStrategyLine1,
+  SeamlesssStrategyLine2,
+  SeamlesssStrategyLine3,
+  SeamlesssStrategyLine4,
+  SeamlesssStrategyLine5,
+} from "../../../shared/icon";
 
 const seamlessStrategy = [
   {
     headImage: visitor,
     headTitle: "Visitor",
     title: "AWARENESS",
+    lineImage: <SeamlesssStrategyLine1 />,
     mapContent: [
       {
         title: ["Social Ads"],
@@ -44,6 +56,7 @@ const seamlessStrategy = [
     headImage: media,
     headTitle: "Potential Customer",
     title: "CONSIDERATION",
+    lineImage: <SeamlesssStrategyLine2 />,
     mapContent: [
       {
         title: ["Customer Reviews", "Blog"],
@@ -58,6 +71,7 @@ const seamlessStrategy = [
     headImage: creativeContent,
     headTitle: "Customer",
     title: "CONVERSION",
+    lineImage: <SeamlesssStrategyLine3 />,
     mapContent: [
       {
         title: ["Store", "Website"],
@@ -69,6 +83,7 @@ const seamlessStrategy = [
     headImage: visitor,
     headTitle: "Return Customer",
     title: "LOYALTY",
+    lineImage: <SeamlesssStrategyLine4 />,
     mapContent: [
       {
         title: ["Live Support"],
@@ -86,6 +101,7 @@ const seamlessStrategy = [
     headImage: loyalCustomer,
     headTitle: "Loyal Customer",
     title: "ADVOCACY",
+    lineImage: <SeamlesssStrategyLine5 />,
     mapContent: [
       {
         title: ["Brand Ambassadors"],
@@ -135,7 +151,16 @@ Tailored to your Brand's Unique Needs. "
                   }}
                   breakpoints={{
                     0: {
-                      slidesPerView: 1.5,
+                      slidesPerView: 1.4,
+                    },
+                    375: {
+                      slidesPerView: 1.8,
+                    },
+                    480: {
+                      slidesPerView: 2.3,
+                    },
+                    575: {
+                      slidesPerView: 2.5,
                     },
                     992: {
                       slidesPerView: 3,
@@ -173,15 +198,9 @@ Tailored to your Brand's Unique Needs. "
                             </div>
                           ))}
                       </div>
-                      {index === 0 && (
-                        <div className={styles.seamlessStrategyLine}>
-                          <Image
-                            src={seamlesssStrategyLine}
-                            alt="seamlesssStrategyLine"
-                            layout="responsive"
-                          />
-                        </div>
-                      )}
+                      <div className={styles.seamlessStrategyLine}>
+                        {item.lineImage}
+                      </div>
                     </SwiperSlide>
                   ))}
                 </SYSwiper>

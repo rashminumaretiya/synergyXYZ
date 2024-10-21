@@ -55,7 +55,6 @@
     font-family: "raleway-bold";
     color: $white;
     margin-bottom: 50px;
-    max-width: 1120px;
     @media screen and (max-width: 991px) {
       font-size: 58px;
       line-height: 70px;
@@ -72,6 +71,8 @@
     }
     @media screen and (max-width: 425px) {
       max-width: 94%;
+      font-size: 28px;
+      line-height: 40px;
     }
   }
   span {

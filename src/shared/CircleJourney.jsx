@@ -8,43 +8,66 @@ import Heading from "./Heading";
 
 const CircleJourney = ({ list, heading }) => {
   const containerRef = useRef(null);
-  const [scrollPosition, setScrollPosition] = useState(0);
   const [halfScreenWidth, setHalfScreenWidth] = useState(window.innerWidth / 2);
-  const [activeSlide, setActiveSlide] = useState(0); // State to track active slide
-  const [abc, setAbc] = useState([]); // State to track active slide
-  const [journeyStepsWidth, setJourneyStepsWidth] = useState(0);
+  const [activeSlide, setActiveSlide] = useState(0);
+  const [activeSlides, setActiveSlides] = useState([0]); // Keep track of all active slides
   const controls = useAnimation();
 
-  useLayoutEffect(() => {
-    const calculateJourneyStepsWidthWidth = () => {
-      const elements = document.querySelectorAll('[id^="journeyStep"]');
-      let totalWidth = window.innerWidth > 768 ? 200 : 0;
-      for (let i = 0; i < elements.length; i++) {
-        totalWidth += elements[i].clientWidth;
-      }
-      setJourneyStepsWidth(totalWidth);
+  // Dynamically set half screen width on window resize
+  useEffect(() => {
+    const calculateHalfScreenWidth = () => {
+      setHalfScreenWidth(window.innerWidth / 2);
     };
 
-    calculateJourneyStepsWidthWidth();
-    window.addEventListener("resize", calculateJourneyStepsWidthWidth);
+    window.addEventListener("resize", calculateHalfScreenWidth);
+    calculateHalfScreenWidth();
 
     return () => {
-      window.removeEventListener("resize", calculateJourneyStepsWidthWidth);
+      window.removeEventListener("resize", calculateHalfScreenWidth);
     };
-  }, [list?.length]);
+  }, []);
 
+  // Center the active card
+  const centerActiveCard = (index) => {
+    const elements = document.querySelectorAll('[id^="journeyStep"]');
+    if (elements[index]) {
+      const elementOffset = elements[index].offsetLeft;
+      const elementWidth = elements[index].clientWidth;
+      const centeredPosition =
+        elementOffset - halfScreenWidth + elementWidth / 2;
+      controls.start({ x: -centeredPosition });
+    }
+  };
+
+  // Initialize the first slide to be active and centered
+  useEffect(() => {
+    centerActiveCard(0);
+  }, [list?.length, halfScreenWidth]);
+
+  // Handle wheel scroll to navigate between slides
   useEffect(() => {
     const handleWheel = (e) => {
       e.preventDefault();
-      const delta = Math.sign(e.deltaY) * 100;
-      setScrollPosition((prev) => {
-        const newPosition = Math.max(
-          0,
-          Math.min(prev + delta, journeyStepsWidth - halfScreenWidth / 2)
-        );
+      const direction = Math.sign(e.deltaY);
 
-        return newPosition;
-      });
+      // Navigate slides based on scroll direction
+      if (direction > 0 && activeSlide < list.length - 1) {
+        setActiveSlide((prev) => {
+          const newActive = prev + 1;
+          if (!activeSlides.includes(newActive)) {
+            setActiveSlides((prevActive) => [...prevActive, newActive]);
+          }
+          return newActive;
+        });
+      } else if (direction < 0 && activeSlide > 0) {
+        setActiveSlide((prev) => {
+          const newActive = prev - 1;
+          if (!activeSlides.includes(newActive)) {
+            setActiveSlides((prevActive) => [...prevActive, newActive]);
+          }
+          return newActive;
+        });
+      }
     };
 
     const container = containerRef.current;
@@ -57,34 +80,27 @@ const CircleJourney = ({ list, heading }) => {
         container.removeEventListener("wheel", handleWheel);
       }
     };
-  }, [list?.length, journeyStepsWidth, halfScreenWidth]);
+  }, [activeSlide, list.length, activeSlides]);
 
+  // Center the newly active slide when `activeSlide` changes
   useEffect(() => {
-    controls.start({ x: halfScreenWidth - scrollPosition });
-  }, [scrollPosition, controls, halfScreenWidth]);
+    centerActiveCard(activeSlide);
+  }, [activeSlide]);
+
+  // Handle click to activate and center slides
+  const handleCardClick = (index) => {
+    setActiveSlide(index);
+    // Activate all previous slides including the clicked one
+    const newActiveSlides = Array.from({ length: index + 1 }, (_, i) => i);
+    setActiveSlides(newActiveSlides);
+  };
 
   const handleDotClick = (index) => {
     setActiveSlide(index);
-    const newScrollPosition = index * 300;
-    setScrollPosition(newScrollPosition);
+    // Activate all previous slides including the clicked one
+    const newActiveSlides = Array.from({ length: index + 1 }, (_, i) => i);
+    setActiveSlides(newActiveSlides);
   };
-
-  const handleCardClick = (index) => {
-    setAbc((prev) => [...prev, index]);
-    setActiveSlide(index);
-    const newScrollPosition = index * 300;
-    setScrollPosition(newScrollPosition);
-  };
-  useEffect(() => {
-    const handleResize = () => {
-      setHalfScreenWidth(window.innerWidth / 2);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   let cardNum = 0;
   return (
@@ -98,13 +114,21 @@ const CircleJourney = ({ list, heading }) => {
         >
           {list?.map((card, index) => {
             cardNum = card.multiCardSection ? cardNum : cardNum + 1;
+            const isCurrentlyActive = activeSlide === index;
+            const isPreviouslyActive = activeSlides.includes(index);
+
+            // Determine class names based on whether the slide is currently active or was previously active
+            const className = isCurrentlyActive
+              ? styles.active
+              : isPreviouslyActive
+                ? styles.activeSlide
+                : "";
+
             return (
               <motion.div
                 key={index}
                 id={`journeyStep${index}`}
-                className={`${styles.slide} ${
-                  abc.includes(index) ? styles.active : ""
-                } ${abc.includes(index) && activeSlide !== index ? styles.activeSlide : ""}`}
+                className={`${styles.slide} ${className}`}
                 transition={{ duration: 0.5, ease: "easeInOut" }}
                 onClick={() => handleCardClick(index)}
               >
@@ -144,17 +168,13 @@ const CircleJourney = ({ list, heading }) => {
         </motion.div>
       </div>
       <div className={styles.slideDots}>
-        {list?.map((_, index) => {
-          return (
-            <>
-              <button
-                key={index}
-                onClick={() => handleDotClick(index)}
-                className={` ${activeSlide === index ? styles.active : ""}`}
-              />
-            </>
-          );
-        })}
+        {list?.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => handleDotClick(index)}
+            className={`${activeSlide === index ? styles.active : ""}`}
+          />
+        ))}
       </div>
     </div>
   );
