@@ -28,7 +28,7 @@
           width: 100vw;
           top: 50%;
         }
-        &.active {
+        &.active, &.activeSlide {
           .bubbleWrapper {
             display: none;
           }
