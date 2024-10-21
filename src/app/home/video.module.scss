@@ -48,7 +48,11 @@
     }
   }
 }
+.videoModal{
+  
+}
 video.video {
   object-fit: cover;
   border-radius: 20px;
+  max-height: 500px;
 }

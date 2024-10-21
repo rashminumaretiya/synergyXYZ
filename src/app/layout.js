@@ -1,8 +1,9 @@
 import "bootstrap/scss/bootstrap.scss";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
-// import SmoothScroll from "../shared/SmoothScroll";
 import "./globals.scss";
+import CursorFollower from "@/shared/CursorFollower";
+import SmoothScroll from "@/shared/SmoothScroll";
 
 export const metadata = {
   title: "Create Next App",
@@ -13,7 +14,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        {/* <SmoothScroll /> */}
+        <SmoothScroll />
+        <CursorFollower />
         <Header />
         {children}
         <Footer />

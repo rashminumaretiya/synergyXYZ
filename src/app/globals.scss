@@ -272,3 +272,15 @@ h5 {
     display: inline-block;
   }
 }
+
+.cursorFollower {
+  position: fixed;
+  background-color: $primary;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999999999;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}
