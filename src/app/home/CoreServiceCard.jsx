@@ -7,7 +7,6 @@ import { isElementHorizontallyCentered } from "@/utils/dom";
 
 const CoreServiceCard = ({
   card,
-  cardNum,
   activateSlide,
   dragInfo,
   isSmallScreen,
@@ -53,7 +52,7 @@ const CoreServiceCard = ({
                 className={styles.color}
                 style={{ backgroundColor: card.color }}
               ></span>
-              <span>{String(cardNum).padStart(2, 0)}</span>
+              <span>{String(card.id).padStart(2, 0)}</span>
               {card.subHeading}
             </h6>
             <h4>{card.title}</h4>
@@ -63,7 +62,6 @@ const CoreServiceCard = ({
         card.multiCardSection && (
           <div className={styles.multiCardWrapper}>
             {card.multiCardSection.map((subCard, index) => {
-              cardNum = cardNum + 1;
               return (
                 <div className={styles.slideInner} key={index}>
                   <div className={styles.bubbleWrapper}>
@@ -85,7 +83,7 @@ const CoreServiceCard = ({
                         className={styles.color}
                         style={{ backgroundColor: subCard.color }}
                       ></span>
-                      <span>{String(cardNum).padStart(2, 0)}</span>
+                      <span>{String(subCard.id).padStart(2, 0)}</span>
                       {subCard.subHeading}
                     </h6>
                     <h4>{subCard.title}</h4>
