@@ -75,7 +75,22 @@ const Header = () => {
     setExpanded(false);
   };
 
+  // Runtime width
+  const useWindowWidth = () => {
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+      const updateWidth = () => setWindowWidth(window.innerWidth);
+
+      window.addEventListener("resize", updateWidth);
+      return () => window.removeEventListener("resize", updateWidth);
+    }, []);
+
+    return windowWidth;
+  };
+
   // Select Style
+  const width = useWindowWidth();
   const customStyles = {
     indicatorSeparator: (provided, state) => ({
       ...provided,
@@ -83,10 +98,12 @@ const Header = () => {
     }),
     container: (provided, state) => ({
       ...provided,
-      margin: "0 32px",
-      borderTop: `1px solid #636466`,
-      padding: "8px 0",
-      borderBottom: `1px solid #636466`,
+      margin: width <= 992 ? "0 32px" : "",
+      borderTop: width <= 992 ? `1px solid #636466` : "0",
+      borderBottom: width <= 992 ? `1px solid #636466` : "0",
+      "@media screen and (max-width:992px)": {
+        padding: "8px 0",
+      },
     }),
     control: (provided, state) => ({
       ...provided,
@@ -96,6 +113,13 @@ const Header = () => {
       borderRadius: 0,
       boxShadow: "none",
       flexDirection: "row-reverse",
+      "& > div": {
+        "&:first-of-type": {
+          width: width <= 992 ? "auto" : "0",
+          overflowY: width <= 992 ? "hidden" : "visible",
+          padding: width <= 992 ? "8px" : "0",
+        },
+      },
       "&:hover": {
         borderColor: "#636466",
       },
@@ -108,21 +132,55 @@ const Header = () => {
       ...provided,
       width: "100%",
       margin: "9px 0 0 0",
-      position: "static",
       border: 0,
       boxShadow: 0,
       borderRadius: 0,
+      "@media screen and (min-width:992px)": {
+        transform: "translate(-43%,40px)",
+        minWidth: 200,
+        padding: 20,
+        borderRadius: 14,
+        margin: 0,
+        boxShadow: "0px 0px 50px rgba(167, 174, 186, 0.2)",
+        "&::after": {
+          content: "''",
+          position: "absolute",
+          bottom: "100%",
+          left: "50%",
+          width: 14,
+          height: 14,
+          background: "#ffffff",
+          clipPath: "polygon(100% 0, 0% 100%, 100% 100%)",
+          borderRadius: "0 0 6px 0",
+          transform: "translate(-50%, 50%) rotate(225deg)",
+        },
+        "& > div": {
+          backgroundColor: "rgba(147, 149, 152, 0.1019607843)",
+          padding: 0,
+          borderRadius: 12,
+        },
+      },
+      "@media screen and (max-width:991px)": {
+        position: "static",
+      },
     }),
     option: (provided, state) => ({
       ...provided,
-      backgroundColor: state.isSelected
-        ? "#2E31921a"
-        : state.isFocused
-          ? "#2E319210"
-          : "#ffffff",
       color: state.isSelected ? "#2E3192" : "#424143",
       padding: "10px 16px",
       lineHeight: "24px",
+      backgroundColor: "transparent",
+      cursor: "pointer",
+      "&:hover": {
+        color: "#2E3192",
+      },
+      "@media screen and (max-width:992px)": {
+        backgroundColor: state.isSelected
+          ? "#2E31921a"
+          : state.isFocused
+            ? "#2E319210"
+            : "#ffffff",
+      },
       "&:active": {
         backgroundColor: "#2E319230",
       },
@@ -190,7 +248,9 @@ const Header = () => {
                           className={styles.navLink}
                           onClick={() => {
                             handleLinkClick();
-                            toggleNavbar();
+                            if (window.innerWidth < 991) {
+                              toggleNavbar();
+                            }
                           }}
                         >
                           {menu?.label}
@@ -249,9 +309,7 @@ const Header = () => {
                       </div>
                     </div>
                   ))}
-                  <div
-                    className={`d-block d-lg-none w-100 ${styles.selectWrapper}`}
-                  >
+                  <div className={`w-100 ${styles.selectWrapper}`}>
                     <ReactSelect
                       styles={customStyles}
                       value={selectedLanguage}
@@ -266,9 +324,6 @@ const Header = () => {
                     <div className={styles.downArrow}>
                       <MenuDownArrow />
                     </div>
-                  </div>
-                  <div className="d-none d-lg-block">
-                    <GlobIcon />
                   </div>
                 </Nav>
                 <SYButton className="ms-3">Start a project</SYButton>
