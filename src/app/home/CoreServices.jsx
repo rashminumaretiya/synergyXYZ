@@ -184,7 +184,13 @@ const CoreServices = () => {
         container.removeEventListener("wheel", handleWheel);
       }
     };
-  }, [cards.length, servicesWidth, halfScreenWidth, isSmallScreen]);
+  }, [
+    cards.length,
+    servicesWidth,
+    halfScreenWidth,
+    isSmallScreen,
+    activeSlide,
+  ]);
 
   useEffect(() => {
     controls.start({ x: halfScreenWidth - scrollPosition });
@@ -232,7 +238,6 @@ const CoreServices = () => {
     };
   }, []);
 
-  let cardNum = 0;
   let customDotCount = 0;
 
   return (
@@ -271,7 +276,6 @@ const CoreServices = () => {
             onDragTransitionEnd={() => setDragInfo(null)}
           >
             {cards.map((card, index) => {
-              cardNum = card.multiCardSection ? cardNum : cardNum + 1;
               return (
                 <CoreServiceCard
                   key={index}
@@ -289,7 +293,6 @@ const CoreServices = () => {
                   animate={{ y: calculateYTransform(index) }}
                   transition={{ duration: 0.5, ease: "easeInOut" }}
                   card={card}
-                  cardNum={cardNum}
                   activateSlide={() => setActiveSlide(index)}
                   dragInfo={dragInfo}
                   onClick={() => handleCardClick(index)}
