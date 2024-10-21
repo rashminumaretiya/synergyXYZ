@@ -1,3 +1,19 @@
+@keyframes line-animation {
+    0% {
+        stroke-dashoffset: 0
+    }
+    100% {
+        stroke-dashoffset: 200
+    }
+}
+@keyframes line-animation-reverse {
+    0% {
+        stroke-dashoffset: 200
+    }
+    100% {
+        stroke-dashoffset: 0
+    }
+}
 .leads {
     color: $secondary;
     font-size: 20px;
@@ -31,6 +47,10 @@
     }
     @media screen and (max-width: 480px) {
         max-width: 388px;  
+    }
+    
+    svg {
+        animation: line-animation-reverse 8s infinite linear;
     }
     &:before {
         content: "";
@@ -157,6 +177,11 @@
                     }
                 }
             }
+            .seamlessStrategyLine {
+                svg {
+                    animation: line-animation 8s infinite linear;
+                }
+            }
         }
         &:nth-child(3) {
             .mapContent {
@@ -240,7 +265,12 @@
                         }
                     }
                 }
-            }          
+            }  
+            .seamlessStrategyLine {
+                svg {
+                    animation: line-animation 8s infinite linear;
+                }
+            }        
         }
         &:nth-child(2n) {
             background-color: $lightGray300;

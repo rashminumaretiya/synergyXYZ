@@ -11,23 +11,24 @@ const CircleJourney = ({ list, heading }) => {
   const [halfScreenWidth, setHalfScreenWidth] = useState(window.innerWidth / 2);
   const [activeSlide, setActiveSlide] = useState(0);
   const [activeSlides, setActiveSlides] = useState([0]); // Keep track of all active slides
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768); // Adjust the breakpoint as needed
   const controls = useAnimation();
 
   // Dynamically set half screen width on window resize
   useEffect(() => {
-    const calculateHalfScreenWidth = () => {
+    const handleResize = () => {
       setHalfScreenWidth(window.innerWidth / 2);
+      setIsMobile(window.innerWidth <= 768); // Set isMobile based on window width
     };
 
-    window.addEventListener("resize", calculateHalfScreenWidth);
-    calculateHalfScreenWidth();
+    window.addEventListener("resize", handleResize);
+    handleResize();
 
     return () => {
-      window.removeEventListener("resize", calculateHalfScreenWidth);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
-  // Center the active card
   const centerActiveCard = (index) => {
     const elements = document.querySelectorAll('[id^="journeyStep"]');
     if (elements[index]) {
@@ -39,19 +40,22 @@ const CircleJourney = ({ list, heading }) => {
     }
   };
 
-  // Initialize the first slide to be active and centered
   useEffect(() => {
     centerActiveCard(0);
   }, [list?.length, halfScreenWidth]);
 
-  // Handle wheel scroll to navigate between slides
   useEffect(() => {
     const handleWheel = (e) => {
       e.preventDefault();
       const direction = Math.sign(e.deltaY);
+      if (
+        (direction === 1 && activeSlide === list.length - 1) ||
+        (direction === -1 && activeSlide === 0)
+      ) {
+        return;
+      }
 
-      // Navigate slides based on scroll direction
-      if (direction > 0 && activeSlide < list.length - 1) {
+      if (direction === 1) {
         setActiveSlide((prev) => {
           const newActive = prev + 1;
           if (!activeSlides.includes(newActive)) {
@@ -59,7 +63,7 @@ const CircleJourney = ({ list, heading }) => {
           }
           return newActive;
         });
-      } else if (direction < 0 && activeSlide > 0) {
+      } else if (direction === -1) {
         setActiveSlide((prev) => {
           const newActive = prev - 1;
           if (!activeSlides.includes(newActive)) {
@@ -69,9 +73,8 @@ const CircleJourney = ({ list, heading }) => {
         });
       }
     };
-
     const container = containerRef.current;
-    if (container) {
+    if (container && !isMobile) {
       container.addEventListener("wheel", handleWheel, { passive: false });
     }
 
@@ -80,18 +83,17 @@ const CircleJourney = ({ list, heading }) => {
         container.removeEventListener("wheel", handleWheel);
       }
     };
-  }, [activeSlide, list.length, activeSlides]);
+  }, [activeSlide, list.length, activeSlides, isMobile]);
 
-  // Center the newly active slide when `activeSlide` changes
   useEffect(() => {
     centerActiveCard(activeSlide);
   }, [activeSlide]);
 
-  // Handle click to activate and center slides
   const handleCardClick = (index) => {
     setActiveSlide(index);
     setActiveSlides((prev) => {
-      const uniqueSlides = new Set([...prev, index]);
+      const newSlides = new Array(index + 1).fill(0).map((_, idx) => idx);
+      const uniqueSlides = new Set([...prev, ...newSlides]);
       return Array.from(uniqueSlides);
     });
   };
@@ -99,9 +101,23 @@ const CircleJourney = ({ list, heading }) => {
   const handleDotClick = (index) => {
     setActiveSlide(index);
     setActiveSlides((prev) => {
-      const uniqueSlides = new Set([...prev, index]);
+      const newSlides = new Array(index + 1).fill(0).map((_, idx) => idx);
+      const uniqueSlides = new Set([...prev, ...newSlides]);
       return Array.from(uniqueSlides);
     });
+  };
+
+  // Handle dragging on mobile
+  const handleDragEnd = (event, info) => {
+    const dragDistance = info.offset.x;
+    const threshold = 50; // Set a threshold for how much the user must drag to switch cards
+    if (dragDistance > threshold && activeSlide > 0) {
+      // Dragging right (to previous card)
+      setActiveSlide((prev) => prev - 1);
+    } else if (dragDistance < -threshold && activeSlide < list.length - 1) {
+      // Dragging left (to next card)
+      setActiveSlide((prev) => prev + 1);
+    }
   };
 
   let cardNum = 0;
@@ -119,7 +135,6 @@ const CircleJourney = ({ list, heading }) => {
             const isCurrentlyActive = activeSlide === index;
             const isPreviouslyActive = activeSlides.includes(index);
 
-            // Determine class names based on whether the slide is currently active or was previously active
             const className = isCurrentlyActive
               ? styles.active
               : isPreviouslyActive
@@ -133,6 +148,9 @@ const CircleJourney = ({ list, heading }) => {
                 className={`${styles.slide} ${className}`}
                 transition={{ duration: 0.5, ease: "easeInOut" }}
                 onClick={() => handleCardClick(index)}
+                drag={isMobile ? "x" : false}
+                dragConstraints={{ left: 0, right: 0 }}
+                onDragEnd={handleDragEnd}
               >
                 <div className={styles.slideInner} key={index}>
                   <div className={styles.bubbleWrapper}>
