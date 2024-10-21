@@ -1,5 +1,4 @@
 .header {
-  backdrop-filter: blur(20px);
   box-shadow: 0px 2px 4px 0px #00000040;
   border-radius: 0 0 20px 20px;
   background-color: $white;
@@ -39,14 +38,15 @@
       z-index: 999;
       right: -350px;
       top: 0;
-      height: 100dvh;
-      max-height: 100vh;
+      height: 100vh;
+      max-height: 100dvh;
       overflow-y: auto;
       background-color: $white;
       box-shadow: -10px 0 30px rgba(200, 200, 200, 0.3);
       max-width: 250px;
       transition: all 0.3s ease-in-out;
       padding-bottom: 50px;
+      display: block;
       &:global(.show) {
         right: 0;
       }
@@ -144,7 +144,7 @@
       top: 100%;
       left: 50%;
       transform: translate(-50%, 15px);
-      padding-top: 40px;
+      padding-top: 45px;
       transition: all 0.2s ease-in-out;
       z-index: 1000;
       @media screen and (max-width: 991px) {
@@ -232,16 +232,22 @@
   .selectWrapper {
     position: relative;
     .downArrow {
-      position: absolute;
-      top: 28px;
-      transform: translateY(-50%);
-      right: 40px;
+      display: none;
+      @media screen and (max-width: 991px) {
+        display: block;
+        position: absolute;
+        top: 28px;
+        transform: translateY(-50%);
+        right: 40px;
+        pointer-events: none;
+      }
     }
   }
   .menuToggleBtn,
   .closeIcon {
     padding: 0;
     border: 0;
+    border-radius: 0;
     &:focus {
       box-shadow: none;
     }
