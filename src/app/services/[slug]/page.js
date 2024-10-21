@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import BgShape from "../../../assets/image/png/bg-shape.png";
 import serviceBubble from "../../../assets/image/png/service-bubble.png";
 import serviceShape1 from "../../../assets/image/png/service-shape1.png";
 import serviceShape2 from "../../../assets/image/png/service-shape2.png";
@@ -65,15 +64,19 @@ const Page = ({ params }) => {
         </div>
         <SYContainer>
           <SYRow className="align-items-end flex-row-reverse">
-            <SYCol md={4}>
+            <SYCol md={5} lg={4}>
               <div className={styles.serviceBubble}>
                 <div className={styles.serviceBubbleIcon}>
                   <Image src={data?.bannerInfo?.image} alt="create" />
                 </div>
-                <Image src={serviceBubble} alt="serviceBubble" />
+                <Image
+                  src={serviceBubble}
+                  alt="serviceBubble"
+                  className={styles.bannerBubble}
+                />
               </div>
             </SYCol>
-            <SYCol md={8}>
+            <SYCol md={7} lg={8}>
               <span>{data?.bannerInfo?.name} —</span>
               <h2
                 dangerouslySetInnerHTML={{ __html: data?.bannerInfo?.title }}
@@ -91,7 +94,7 @@ const Page = ({ params }) => {
               <div className={styles.contentInner} key={i}>
                 <CurvyLine />
                 <h4>{data.title}</h4>
-                <p>{data.description}</p>
+                {data.description && <p>{data.description}</p>}
                 <ul
                   className={data?.listItem ? `list-item${data?.listItem}` : ""}
                 >
@@ -125,13 +128,6 @@ const Page = ({ params }) => {
         </div>
       </SYContainer>
       <div className={styles.serviceBottomSection}>
-        <Image
-          src={BgShape}
-          alt="Bg shape"
-          className="w-100 position-relative z-1"
-          width="100%"
-          height="auto"
-        />
         <CircleJourney list={data?.cards} heading={data?.processTitle} />
         <SYContainer className="my-5">
           <SYRow>
@@ -139,7 +135,7 @@ const Page = ({ params }) => {
               <Heading label={data?.whyChooseTitle} />
             </SYCol>
           </SYRow>
-          <SYRow className="justify-content-center">
+          <SYRow className="justify-content-center  row-gap-4">
             {data?.whyChooseBox?.map((data, index) => (
               <SYCol xs={12} md={6} xl={3} key={index}>
                 <CardSection

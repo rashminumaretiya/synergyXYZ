@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 import ReactSelect from "react-select";
 import Logo from "../assets/image/svg/logo.svg";
@@ -44,21 +44,35 @@ const menuList = [
 
 const Header = () => {
   const [isActive, setIsActive] = useState(false);
-
   const handleToggle = () => {
     setIsActive(!isActive);
   };
 
   // Language select
   const [selectedLanguage, setSelectedLanguage] = useState(null);
-
   const languageOptions = [
     { value: "en", label: "English" },
     { value: "th", label: "Thailand" },
   ];
-
   const handleChange = (selectedOption) => {
     setSelectedLanguage(selectedOption);
+  };
+
+  //Body overflow hidden
+  const [isNavbarOpen, setIsNavbarOpen] = useState(false);
+  const toggleNavbar = () => setIsNavbarOpen((prevState) => !prevState);
+  useEffect(() => {
+    document.body.style.overflowY = isNavbarOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflowY = "";
+    };
+  }, [isNavbarOpen]);
+
+  // Link Click
+  const [expanded, setExpanded] = useState(false);
+
+  const handleLinkClick = () => {
+    setExpanded(false);
   };
 
   // Select Style
@@ -114,20 +128,45 @@ const Header = () => {
       },
     }),
   };
+
+  // Stickey Header
+  const [isSticky, setIsSticky] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 200) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const CustomDropdownIndicator = (props) => <GlobIcon />;
 
   return (
     <header className="position-relative">
-      <div className={`${styles.header} ${styles.fixedTop}`}>
+      <div className={`${styles.header} ${isSticky ? styles.fixedTop : ""}`}>
         <SYContainer>
           <div className="d-flex align-items-center justify-content-between">
             <Link href="/">
               <Image src={Logo} alt="logo" className={styles.logo} />
             </Link>
-            <Navbar expand="lg" className="p-0 align-items-center">
+            <Navbar
+              expanded={expanded}
+              onToggle={() => setExpanded(!expanded)}
+              expand="lg"
+              className="p-0 align-items-center"
+            >
               <Navbar.Toggle
                 aria-controls="basic-navbar-nav"
                 className={styles.menuToggleBtn}
+                onClick={toggleNavbar}
               >
                 <MenuIcon />
               </Navbar.Toggle>
@@ -138,6 +177,7 @@ const Header = () => {
                 <Navbar.Toggle
                   aria-controls="basic-navbar-nav"
                   className={styles.closeIcon}
+                  onClick={toggleNavbar}
                 >
                   <CloseIcon />
                 </Navbar.Toggle>
@@ -145,7 +185,14 @@ const Header = () => {
                   {menuList?.map((menu, menuIndex) => (
                     <div key={menuIndex} className="position-relative w-100">
                       <div className={styles.navLinkWrapper}>
-                        <Link href={menu.href} className={styles.navLink}>
+                        <Link
+                          href={menu.href}
+                          className={styles.navLink}
+                          onClick={() => {
+                            handleLinkClick();
+                            toggleNavbar();
+                          }}
+                        >
                           {menu?.label}
 
                           {menu.badge && (
@@ -177,6 +224,10 @@ const Header = () => {
                                       <NavDropdown.Item
                                         as="div"
                                         key={listIndex}
+                                        onClick={() => {
+                                          handleLinkClick();
+                                          toggleNavbar();
+                                        }}
                                       >
                                         <Link href={subList.link}>
                                           {subList?.label}

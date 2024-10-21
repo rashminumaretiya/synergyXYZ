@@ -144,7 +144,9 @@ h5 {
   text-align: center;
   padding: 50px 0;
   color: $white;
-  font-family: "raleway-semibold";
+  h2 {
+    font-family: "raleway-semibold";
+  }
   &.primary {
     color: $primary;
   }
@@ -158,7 +160,7 @@ h5 {
   border-radius: 30px;
   font-size: 20px;
   font-weight: 100;
-  @media screen and (max-width:375px) {
+  @media screen and (max-width: 375px) {
     font-size: 16px;
   }
   &.hide-arrow {
@@ -258,15 +260,15 @@ h5 {
   }
 }
 
-.small-curve-line{
-  @media screen and (max-width:991px) {
+.small-curve-line {
+  @media screen and (max-width: 991px) {
     display: none;
   }
 }
 
-.big-curve-line{
+.big-curve-line {
   display: none;
-  @media screen and (max-width:991px) {
+  @media screen and (max-width: 991px) {
     display: inline-block;
   }
 }

@@ -2,15 +2,31 @@
   backdrop-filter: blur(20px);
   box-shadow: 0px 2px 4px 0px #00000040;
   border-radius: 0 0 20px 20px;
-  background-color: rgba($white, 0.8);
+  background-color: $white;
   z-index: 99;
+  position: absolute;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
   @media screen and (max-width: 991px) {
     padding: 18px 0;
   }
   &.fixedTop {
     position: fixed;
-    width: 100%;
     z-index: 999;
+    background-color: rgba($white, 0.8);
+    backdrop-filter: blur(5px);
+    animation: fadeDown 0.2s linear;
+  }
+  @keyframes fadeDown {
+    0% {
+      transform: translateY(-100%);
+      top: 0;
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0%);
+      opacity: 1;
+    }
   }
   .logo {
     @media screen and (max-width: 575px) {
@@ -23,12 +39,14 @@
       z-index: 999;
       right: -350px;
       top: 0;
-      height: 100vh;
+      height: 100dvh;
+      max-height: 100vh;
+      overflow-y: auto;
       background-color: $white;
       box-shadow: -10px 0 30px rgba(200, 200, 200, 0.3);
       max-width: 250px;
       transition: all 0.3s ease-in-out;
-      display: block;
+      padding-bottom: 50px;
       &:global(.show) {
         right: 0;
       }
@@ -230,6 +248,9 @@
     &:focus-visible {
       outline: 0;
     }
+  }
+  .menuToggleBtn {
+    margin-right: 20px;
   }
   .closeIcon {
     color: $primary;

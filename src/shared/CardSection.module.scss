@@ -1,74 +1,78 @@
 .whyChooseBox {
-    padding: 32px 36px;
-    position: relative;
-    background-color: rgba($white, 0.05);
-    height: 100%;
-    @media screen and (max-width: 1399px) {
-      padding: 25px 15px;
-    }
-    @media screen and (max-width: 991px) {
-      padding: 20px;
-    }
+  padding: 32px 36px;
+  position: relative;
+  background-color: rgba($white, 0.05);
+  height: 100%;
+  @media screen and (max-width: 1399px) {
+    padding: 25px 15px;
+  }
+  @media screen and (max-width: 991px) {
+    padding: 20px;
+  }
+  border-radius: 20px;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: calc(100% + 2px);
+    width: calc(100% + 2px);
+    border: 1px solid transparent;
+    background: linear-gradient(
+        90deg,
+        #0088ac -0.37%,
+        #0054a6 117.31%,
+        #662d91 234.99%
+      )
+      border-box;
+    mask:
+      linear-gradient(#fff 0 0) padding-box,
+      linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    z-index: 0;
     border-radius: 20px;
-    &::before {
+    z-index: -1;
+  }
+  .imageWrapper {
+    position: relative;
+    &::after {
       content: "";
       position: absolute;
-      top: 0;
-      left: 0;
-      height: calc(100% + 2px);
-      width: calc(100% + 2px);
-      border: 1px solid transparent;
-      background: linear-gradient(
-          90deg,
-          #0088ac -0.37%,
-          #0054a6 117.31%,
-          #662d91 234.99%
-        )
-        border-box;
-      mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-      mask-composite: exclude;
-      z-index: 0;
-      border-radius: 20px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 230px;
+      width: 100%;
+      background: url("../assets/image/png/card-image-shadow.png");
       z-index: -1;
-    }
-    .imageWrapper {
-      position: relative;
-      &::after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        height: 230px;
-        width: 100%;
-        background: url('../assets/image/png/card-image-shadow.png');
-        z-index: -1;
-        opacity: 0.5;
-        @media screen and (max-width: 767px) {
-          height: 194px;
-        }
-      }
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
       @media screen and (max-width: 767px) {
-        img {
-          max-width: 140px;
-          max-height: 140px;
-        }
+        height: 194px;
       }
     }
-    h5 {
-      padding: 0 24px;
-      color: $white;
-      @media screen and (max-width: 991px) {
-        padding: 0;
-        font-size: 26px !important;
-        line-height: 32px !important;
-      }
-    }
-    p {
-      color: $white;
-      .boldText {
-        font-family: "raleway-semibold";
-        margin-right: 5px;
+    @media screen and (max-width: 767px) {
+      img {
+        max-width: 140px;
+        max-height: 140px;
       }
     }
   }
+  h5 {
+    padding: 0 24px;
+    color: $white;
+    @media screen and (max-width: 991px) {
+      padding: 0;
+      font-size: 26px !important;
+      line-height: 32px !important;
+    }
+  }
+  p {
+    color: $white;
+    .boldText {
+      font-family: "raleway-semibold";
+      margin-right: 5px;
+    }
+  }
+}

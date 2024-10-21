@@ -14,7 +14,7 @@ const Heading = ({ label, primary, className }) => {
       <span className="big-curve-line">
         <CurvyLineBig />
       </span>
-      <h2 className="fw-semibold">{label}</h2>
+      <h2>{label}</h2>
     </div>
   );
 };
