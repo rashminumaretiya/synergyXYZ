@@ -152,8 +152,17 @@ const CoreServices = () => {
 
   useEffect(() => {
     const handleWheel = (e) => {
-      e.preventDefault();
       const delta = Math.sign(e.deltaY) * 100;
+      const isScrollingUpwards = delta < 0;
+      const isScrollingDownwards = delta > 0;
+
+      if (
+        (isScrollingUpwards && activeSlide !== 0) ||
+        (isScrollingDownwards && activeSlide !== cards.length - 1)
+      ) {
+        e.preventDefault();
+      }
+
       setScrollPosition((prev) => {
         const newPosition = Math.max(
           0,
