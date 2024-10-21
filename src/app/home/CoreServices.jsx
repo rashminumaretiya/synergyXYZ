@@ -266,13 +266,13 @@ const CoreServices = () => {
             drag={isSmallScreen ? "x" : false}
             dragSnapToOrigin={false}
             dragConstraints={{
-              left: -(servicesWidth - halfScreenWidth - 450),
+              left: -(servicesWidth - halfScreenWidth - 200),
               right: halfScreenWidth - scrollPosition,
             }}
             onDrag={(e, info) => {
               setDragInfo(info);
             }}
-            dragTransition={{ timeConstant: 400 }}
+            dragTransition={{ timeConstant: 300 }}
             onDragTransitionEnd={() => setDragInfo(null)}
           >
             {cards.map((card, index) => {
@@ -290,7 +290,13 @@ const CoreServices = () => {
                         : ""
                   }`}
                   initial={{ y: calculateYTransform(index) }}
-                  animate={{ y: calculateYTransform(index) }}
+                  animate={{
+                    y: isSmallScreen
+                      ? index % 2 === 0
+                        ? 75
+                        : 175
+                      : calculateYTransform(index),
+                  }}
                   transition={{ duration: 0.5, ease: "easeInOut" }}
                   card={card}
                   activateSlide={() => setActiveSlide(index)}
